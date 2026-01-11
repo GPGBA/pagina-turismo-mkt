@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo MKT | Ingeniería de Datos & Prospección Perpetua</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #08090C;
+            color: #E2E8F0;
+            overflow-x: hidden;
+        }
+
+        .mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .text-cyan {
+            color: #00F2FF;
+        }
+
+        .bg-cyan {
+            background-color: #00F2FF;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-overlay {
+            background: linear-gradient(180deg, rgba(8, 9, 12, 0.6) 0%, rgba(8, 9, 12, 1) 100%);
+        }
+
+        video#bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            opacity: 0.4;
+        }
+
+        .border-glow {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .border-glow:hover {
+            border-color: rgba(0, 242, 255, 0.5);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .border-glow:hover h3 {
+            color: #00F2FF;
+            transition: color 0.3s ease;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #08090C;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+
+        /* Language Switcher Active State */
+        .lang-btn.active {
+            color: #FFFFFF;
+            border-bottom: 2px solid #00F2FF;
+        }
+
+        .lang-btn {
+            color: #6B7280;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .lang-btn:hover {
+            color: #00F2FF;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-cyan/30 selection:text-cyan">
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
+        <!-- Language Switcher -->
+        <div class="absolute top-6 right-6 z-50 flex gap-4 text-xs font-mono tracking-widest">
+            <button onclick="setLanguage('es')" class="lang-btn active" id="btn-es">ES</button>
+            <button onclick="setLanguage('pt')" class="lang-btn" id="btn-pt">PT</button>
+            <button onclick="setLanguage('en')" class="lang-btn" id="btn-en">EN</button>
+        </div>
+
+        <video autoplay muted loop id="bg-video" poster="">
+            <source src="hero-bg.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 hero-overlay z-[-1]"></div>
+
+        <div class="max-w-6xl text-center z-10">
+            <div class="inline-block mb-6 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm"
+                data-aos="fade-down">
+                <span class="mono text-cyan tracking-wider text-[10px] md:text-xs uppercase font-medium"
+                    data-i18n="hero_badge">Advanced Growth Infrastructure</span>
+            </div>
+
+            <h1 class="text-5xl md:text-8xl lg:text-9xl font-bold mb-8 tracking-tighter leading-[0.9]"
+                data-aos="zoom-in" data-aos-duration="1000">
+                Turismo <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">MKT</span>
+            </h1>
+
+            <p class="text-gray-400 text-lg md:text-2xl font-light max-w-3xl mx-auto mb-12 leading-relaxed"
+                data-aos="fade-up" data-aos-delay="100">
+                <span data-i18n="hero_desc_start">Desarrollo de</span> <span class="text-white font-medium"
+                    data-i18n="hero_desc_highlight">Infraestructura de Ingeniería</span> <span
+                    data-i18n="hero_desc_end">para la captación, trackeo y conversión de demanda en el mercado
+                    turístico.</span>
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-5 justify-center items-center" data-aos="fade-up"
+                data-aos-delay="200">
+                <a href="https://wa.me/5491126839849"
+                    class="group relative bg-cyan text-black px-8 py-4 rounded-full font-bold text-lg transition-all hover:bg-[#33F5FF] hover:shadow-[0_0_40px_rgba(0,242,255,0.4)]">
+                    <span class="relative z-10" data-i18n="cta_consult">Solicitar Consultoría Gratuita</span>
+                </a>
+                <a href="#ingenieria"
+                    class="px-8 py-4 rounded-full font-medium text-lg text-white/80 hover:text-white glass hover:bg-white/5 transition-all"
+                    data-i18n="cta_ecosystem">
+                    Ver Ecosistema
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Grid -->
+    <section id="ingenieria" class="py-32 px-4 relative">
+        <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto mb-20">
+            <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4" data-i18n="eco_title">Ecosistema
+                        Digital <br /><span class="text-gray-500">de Alta Performance</span></h2>
+                </div>
+                <div class="mono text-cyan/60 text-xs uppercase tracking-widest border-l border-white/10 pl-4">
+                    <span data-i18n="eco_subtitle_1">Soluciones de</span><br><span data-i18n="eco_subtitle_2">Ingeniería
+                        de Datos</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+
+            <!-- 01 CORE -->
+            <div class="glass p-6 md:p-8 rounded-2xl border-glow group flex flex-col h-full" data-aos="fade-up">
+                <div
+                    class="mono text-xs mb-4 flex justify-between items-center text-gray-500 group-hover:text-cyan/70 transition-colors">
+                    <span>01 // CORE</span></div>
+                <h3 class="text-xl font-bold mb-3 tracking-tight text-white group-hover:text-cyan transition-colors"
+                    data-i18n="item_1_title">Ingeniería de Datos</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mt-auto" data-i18n="item_1_desc">Arquitectura avanzada
+                    para la extracción, limpieza y procesamiento de demanda latente en mercados locales e
+                    internacionales.</p>
+            </div>
+
+            <!-- 02 SYSTEMS -->
+            <div class="glass p-6 md:p-8 rounded-2xl border-glow group flex flex-col h-full" data-aos="fade-up"
+                data-aos-delay="50">
+                <div class="mono text-xs mb-4 text-gray-500 group-hover:text-cyan/70 transition-colors">02 // SYSTEMS
+                </div>
+                <h3 class="text-xl font-bold mb-3 tracking-tight text-white group-hover:text-cyan transition-colors"
+                    data-i18n="item_2_title">Prospección Perpetua</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mt-auto" data-i18n="item_2_desc">Sistemas autónomos de
+                    captación activa 24/7 diseñados para captar prospectos con intención de compra en tiempo real.</p>
+            </div>
+
+            <!-- 03 ANALYTICS -->
+            <div class="glass p-6 md:p-8 rounded-2xl border-glow group flex flex-col h-full" data-aos="fade-up"
+                data-aos-delay="100">
+                <div class="mono text-xs mb-4 text-gray-500 group-hover:text-cyan/70 transition-colors">03 // ANALYTICS
+                </div>
+                <h3 class="text-xl font-bold mb-3 tracking-tight text-white group-hover:text-cyan transition-colors"
+                    data-i18n="item_3_title">Trackeo de Intención</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mt-auto" data-i18n="item_3_desc">Identificación
+                    quirúrgica de perfiles con alta probabilidad de conversión según comportamiento digital.</p>
+            </div>
+
+            <!-- 04 ALGORITHM -->
+            <div class="glass p-6 md:p-8 rounded-2xl border-glow group flex flex-col h-full" data-aos="fade-up"
+                data-aos-delay="150">
+                <div class="mono text-xs mb-4 text-gray-500 group-hover:text-cyan/70 transition-colors">04 // ALGORITHM
+                </div>
+                <h3 class="text-xl font-bold mb-3 tracking-tight text-white group-hover:text-cyan transition-colors"
+                    data-i18n="item_4_title">Retroalimentación Exponencial</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mt-auto" data-i18n="item_4_desc">Alimentación del Pixel
+                    de Meta / Conjunto con datos con clientes 100% calificados.</p>
+            </div>
+
+            <!-- 05 PUSH DE INFLUENCIA -->
+            <div class="glass p-6 md:p-8 rounded-2xl border-glow group flex flex-col h-full" data-aos="fade-up">
+                <div class="mono text-xs mb-4 text-gray-500 group-hover:text-cyan/70 transition-colors">05 // PUSH DE
+                    INFLUENCIA</div>
+                <h3 class="text-xl font-bold mb-3 tracking-tight text-white group-hover:text-cyan transition-colors"
+                    data-i18n="item_5_title">Influencia Asistida</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mt-auto" data-i18n="item_5_desc">Estrategias de empuje
+                    por influenciadores del sector para impulsar el alcance orgánico y llegar al cliente objetivo.</p>
+            </div>
+
+            <!-- 06 OMNICHANNEL -->
+            <div class="glass p-6 md:p-8 rounded-2xl border-glow group flex flex-col h-full" data-aos="fade-up"
+                data-aos-delay="50">
+                <div class="mono text-xs mb-4 text-gray-500 group-hover:text-cyan/70 transition-colors">06 //
+                    OMNICHANNEL</div>
+                <h3 class="text-xl font-bold mb-3 tracking-tight text-white group-hover:text-cyan transition-colors"
+                    data-i18n="item_6_title">CRM Multiagente</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mt-auto" data-i18n="item_6_desc">Gestión centralizada de
+                    tráfico y atención para WhatsApp, Instagram, Facebook, TikTok y YouTube. Todo tu equipo y canales en
+                    un mismo lugar.</p>
+            </div>
+
+            <!-- 07 AUTOMATION -->
+            <div class="glass p-6 md:p-8 rounded-2xl border-glow group flex flex-col h-full" data-aos="fade-up"
+                data-aos-delay="100">
+                <div class="mono text-xs mb-4 text-gray-500 group-hover:text-cyan/70 transition-colors">07 // AUTOMATION
+                </div>
+                <h3 class="text-xl font-bold mb-3 tracking-tight text-white group-hover:text-cyan transition-colors"
+                    data-i18n="item_7_title">Atención Asistida</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mt-auto" data-i18n="item_7_desc">Diagramación de flujos
+                    lógicos para la automatización de atención al cliente, calificación, maduración de prospectos y
+                    cierre.</p>
+            </div>
+
+            <!-- 08 STRATEGY -->
+            <div class="glass p-6 md:p-8 rounded-2xl border-glow group flex flex-col h-full" data-aos="fade-up"
+                data-aos-delay="150">
+                <div class="mono text-xs mb-4 text-gray-500 group-hover:text-cyan/70 transition-colors">08 // STRATEGY
+                </div>
+                <h3 class="text-xl font-bold mb-3 tracking-tight text-white group-hover:text-cyan transition-colors"
+                    data-i18n="item_8_title">Consultoría de Contenido</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mt-auto" data-i18n="item_8_desc">Análisis y modelado de
+                    tendencias virales globales adaptadas al producto y región de cada operador.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modalities / Work with Us -->
+    <section class="py-24 relative overflow-hidden bg-white/[0.02]">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#08090C] via-transparent to-[#08090C]"></div>
+
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6" data-i18n="mod_title">Modalidades de
+                    Trabajo</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="mod_subtitle">Adaptamos nuestra infraestructura a
+                    las necesidades operativas de su empresa.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <!-- Para Usted -->
+                <div class="glass p-10 rounded-3xl border border-white/5 relative overflow-hidden group">
+                    <!-- Icon and details omitted for brevity, structure kept same -->
+                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <svg class="w-24 h-24 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-gray-700 to-transparent"></div>
+
+                    <h3 class="text-2xl font-bold mb-4"><span data-i18n="mod_1_prefix">Lo Hacemos</span> <span
+                            class="text-cyan" data-i18n="mod_1_highlight">Para Usted</span></h3>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6" data-i18n="mod_1_desc">
+                        Trabajamos para su estructura. Enviamos todo el flujo de prospectos y datos directamente a su
+                        equipo comercial interno para que ellos realicen el cierre.
+                    </p>
+                    <ul class="space-y-3 mb-8 text-gray-500 font-mono text-xs uppercase tracking-wider">
+                        <li class="flex items-center gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-cyan"></span>
+                            <span data-i18n="mod_1_point_1">Integración con su equipo</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-cyan"></span>
+                            <span data-i18n="mod_1_point_2">Control total del cierre</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Por Usted -->
+                <div class="glass p-10 rounded-3xl border border-white/5 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <svg class="w-24 h-24 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-cyan to-transparent"></div>
+
+                    <h3 class="text-2xl font-bold mb-4"><span data-i18n="mod_2_prefix">Lo Hacemos</span> <span
+                            class="text-cyan" data-i18n="mod_2_highlight">Por Usted</span></h3>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6" data-i18n="mod_2_desc">
+                        Servicio llave en mano. Nuestro equipo procesa, califica y madura a los prospectos, enviándole
+                        únicamente al cliente listo para cerrar o ya cerrado.
+                    </p>
+                    <ul class="space-y-3 mb-8 text-gray-500 font-mono text-xs uppercase tracking-wider">
+                        <li class="flex items-center gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-cyan"></span>
+                            <span data-i18n="mod_2_point_1">Procesamiento por TMKT</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-cyan"></span>
+                            <span data-i18n="mod_2_point_2">Entrega de leads calificados</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <a href="https://wa.me/5491126839849"
+                    class="inline-flex items-center gap-3 bg-cyan text-black px-12 py-6 rounded-full font-bold text-xl hover:scale-105 transition shadow-[0_0_50px_rgba(0,242,255,0.25)] hover:shadow-[0_0_70px_rgba(0,242,255,0.4)]">
+                    <span data-i18n="cta_consult">Solicita Tu Consultoría Gratuita</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-4 border-t border-white/5 bg-[#08090C] relative">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="text-3xl font-black tracking-tighter">
+                TURISMO <span class="text-cyan">MKT</span>
+            </div>
+            <div
+                class="flex flex-wrap justify-center gap-8 md:gap-12 text-gray-600 text-[10px] md:text-xs uppercase tracking-[0.2em] mono">
+                <a href="privacy-policy.html" class="hover:text-cyan transition"
+                    data-i18n="footer_privacy">Privacidad</a>
+                <a href="terms.html" class="hover:text-cyan transition" data-i18n="footer_terms">Términos</a>
+                <a href="terms.html#compliance" class="hover:text-cyan transition"
+                    data-i18n="footer_compliance">Compliance</a>
+            </div>
+            <div class="text-gray-700 text-[10px] mono uppercase">
+                &copy; 2026 TMKT - Engineering Data Latam
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50 });
+
+        const translations = {
+            es: {
+                hero_badge: "Advanced Growth Infrastructure",
+                hero_desc_start: "Desarrollo de",
+                hero_desc_highlight: "Infraestructura de Ingeniería",
+                hero_desc_end: "para la captación, trackeo y conversión de demanda en el mercado turístico.",
+                cta_consult: "Solicitar Consultoría Gratuita",
+                cta_ecosystem: "Ver Ecosistema",
+                eco_title: "Ecosistema Digital <br /><span class=\"text-gray-500\">de Alta Performance</span>",
+                eco_subtitle_1: "Soluciones de",
+                eco_subtitle_2: "Ingeniería de Datos",
+                item_1_title: "Ingeniería de Datos",
+                item_1_desc: "Arquitectura avanzada para la extracción y procesamiento de demanda latente en mercados locales e internacionales.",
+                item_2_title: "Prospección Perpetua",
+                item_2_desc: "Sistemas autónomos de captación activa 24/7 diseñados para captar prospectos con intención de compra en tiempo real.",
+                item_3_title: "Trackeo de Intención",
+                item_3_desc: "Identificación quirúrgica de perfiles con alta probabilidad de conversión según comportamiento digital.",
+                item_4_title: "Retroalimentación Exponencial",
+                item_4_desc: "Alimentación del Pixel de Meta / Conjunto con datos con clientes 100% calificados.",
+                item_5_title: "Influencia Asistida",
+                item_5_desc: "Estrategias de empuje por influenciadores del sector para impulsar el alcance orgánico y llegar al cliente objetivo.",
+                item_6_title: "CRM Multiagente",
+                item_6_desc: "Gestión centralizada de tráfico y atención para WhatsApp, Instagram, Facebook, TikTok y YouTube. Todo tu equipo en un lugar.",
+                item_7_title: "Atención Asistida",
+                item_7_desc: "Diagramación de flujos lógicos para la automatización de atención al cliente, calificación, maduración de prospectos y cierre.",
+                item_8_title: "Consultoría de Contenido",
+                item_8_desc: "Análisis y modelado de tendencias virales globales adaptadas al producto y región de cada operador.",
+                mod_title: "Modalidades de Trabajo",
+                mod_subtitle: "Adaptamos nuestra infraestructura a las necesidades operativas de su empresa.",
+                mod_1_prefix: "Lo Hacemos",
+                mod_1_highlight: "Para Usted",
+                mod_1_desc: "Trabajamos para su estructura. Enviamos todo el flujo de prospectos y datos directamente a su equipo comercial interno para que ellos realicen el cierre.",
+                mod_1_point_1: "Integración con su equipo",
+                mod_1_point_2: "Control total del cierre",
+                mod_2_prefix: "Lo Hacemos",
+                mod_2_highlight: "Por Usted",
+                mod_2_desc: "Servicio llave en mano. Nuestro equipo procesa, califica y madura a los prospectos, enviándole únicamente al cliente listo para cerrar o ya cerrado.",
+                mod_2_point_1: "Procesamiento por TMKT",
+                mod_2_point_2: "Entrega de leads calificados",
+                footer_privacy: "Privacidad",
+                footer_terms: "Términos",
+                footer_compliance: "Compliance"
+            },
+            pt: {
+                hero_badge: "Advanced Growth Infrastructure",
+                hero_desc_start: "Desenvolvimento de",
+                hero_desc_highlight: "Infraestrutura de Engenharia",
+                hero_desc_end: "para captação, rastreamento e conversão de demanda no mercado turístico.",
+                cta_consult: "Solicitar Consultoria Gratuita",
+                cta_ecosystem: "Ver Ecossistema",
+                eco_title: "Ecossistema Digital <br /><span class=\"text-gray-500\">de Alta Performance</span>",
+                eco_subtitle_1: "Soluções de",
+                eco_subtitle_2: "Engenharia de Dados",
+                item_1_title: "Engenharia de Dados",
+                item_1_desc: "Arquitetura avançada para extração e processamento de demanda latente em mercados locais e internacionais.",
+                item_2_title: "Prospecção Perpétua",
+                item_2_desc: "Sistemas autônomos de captação ativa 24/7 projetados para captar leads com intenção de compra em tempo real.",
+                item_3_title: "Rastreamento de Intenção",
+                item_3_desc: "Identificação cirúrgica de perfis com alta probabilidade de conversão baseada em comportamento digital.",
+                item_4_title: "Feedback Exponencial",
+                item_4_desc: "Alimentação do Pixel da Meta / Conjunto de dados com clientes 100% qualificados.",
+                item_5_title: "Influência Assistida",
+                item_5_desc: "Estratégias de impulsionamento por influenciadores do setor para aumentar o alcance orgânico e atingir o cliente alvo.",
+                item_6_title: "CRM Multiagente",
+                item_6_desc: "Gestão centralizada de tráfego e atendimento para WhatsApp, Instagram, Facebook, TikTok e YouTube. Toda sua equipe em um lugar.",
+                item_7_title: "Atendimento Assistido",
+                item_7_desc: "Diagramação de fluxos lógicos para automação de atendimento, qualificação, nutrição de leads e fechamento.",
+                item_8_title: "Consultoria de Conteúdo",
+                item_8_desc: "Análise e modelagem de tendências virais globais adaptadas ao produto e região de cada operador.",
+                mod_title: "Modalidades de Trabalho",
+                mod_subtitle: "Adaptamos nossa infraestrutura às necessidades operacionais da sua empresa.",
+                mod_1_prefix: "Fazemos",
+                mod_1_highlight: "Para Você",
+                mod_1_desc: "Trabalhamos para sua estrutura. Enviamos todo o fluxo de leads e dados diretamente para sua equipe comercial interna realizar o fechamento.",
+                mod_1_point_1: "Integração com sua equipe",
+                mod_1_point_2: "Controle total do fechamento",
+                mod_2_prefix: "Fazemos",
+                mod_2_highlight: "Por Você",
+                mod_2_desc: "Serviço Turnkey. Nossa equipe processa, qualifica e nutre os leads, enviando apenas o cliente pronto para fechar ou já fechado.",
+                mod_2_point_1: "Processamento por TMKT",
+                mod_2_point_2: "Entrega de leads qualificados",
+                footer_privacy: "Privacidade",
+                footer_terms: "Termos",
+                footer_compliance: "Compliance"
+            },
+            en: {
+                hero_badge: "Advanced Growth Infrastructure",
+                hero_desc_start: "Development of",
+                hero_desc_highlight: "Engineering Infrastructure",
+                hero_desc_end: "for demand acquisition, tracking, and conversion in the tourism market.",
+                cta_consult: "Request Free Consulting",
+                cta_ecosystem: "View Ecosystem",
+                eco_title: "High Performance <br /><span class=\"text-gray-500\">Digital Ecosystem</span>",
+                eco_subtitle_1: "Solutions for",
+                eco_subtitle_2: "Data Engineering",
+                item_1_title: "Data Engineering",
+                item_1_desc: "Advanced architecture for extracting and processing latent demand in local and international markets.",
+                item_2_title: "Perpetual Prospecting",
+                item_2_desc: "Autonomous 24/7 active acquisition systems designed to capture prospects with real-time buying intent.",
+                item_3_title: "Intent Tracking",
+                item_3_desc: "Surgical identification of high-conversion probability profiles based on digital behavior.",
+                item_4_title: "Exponential Feedback",
+                item_4_desc: "Meta Pixel feeding / Data sets with 100% qualified clients.",
+                item_5_title: "Assisted Influence",
+                item_5_desc: "Push strategies by sector influencers to boost organic reach and reach the target client.",
+                item_6_title: "Multi-Agent CRM",
+                item_6_desc: "Centralized traffic and service management for WhatsApp, Instagram, Facebook, TikTok, and YouTube. All your team in one place.",
+                item_7_title: "Assisted Service",
+                item_7_desc: "Logical flow diagramming for customer service automation, qualification, lead nurturing, and closing.",
+                item_8_title: "Content Consulting",
+                item_8_desc: "Analysis and modeling of global viral trends adapted to each operator's product and region.",
+                mod_title: "Working Modalities",
+                mod_subtitle: "We adapt our infrastructure to your company's operational needs.",
+                mod_1_prefix: "We Do It",
+                mod_1_highlight: "For You (In-house)",
+                mod_1_desc: "We work for your structure. We send the entire flow of prospects and data directly to your internal sales team for them to close.",
+                mod_1_point_1: "Integration with your team",
+                mod_1_point_2: "Total control of closing",
+                mod_2_prefix: "We Do It",
+                mod_2_highlight: "For You (Outsourced)",
+                mod_2_desc: "Turnkey service. Our team processes, qualifies, and nurtures prospects, sending you only the client ready to close or already closed.",
+                mod_2_point_1: "Processing by TMKT",
+                mod_2_point_2: "Delivery of qualified leads",
+                footer_privacy: "Privacy",
+                footer_terms: "Terms",
+                footer_compliance: "Compliance"
+            }
+        };
+
+        function setLanguage(lang) {
+            // Update Buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active', 'text-white', 'border-b-2', 'border-cyan');
+                btn.classList.add('text-gray-500');
+            });
+
+            const activeBtn = document.getElementById(`btn-${lang}`);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+                activeBtn.classList.remove('text-gray-500');
+            }
+
+            // Update Text
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
