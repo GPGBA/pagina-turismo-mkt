@@ -1,1340 +1,1050 @@
 <!DOCTYPE html>
-<html class="dark scroll-smooth" lang="es">
+<html class="scroll-smooth" lang="es">
 
 <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>TMKT ALGOBOOST — Aceleración Algorítmica & Demanda para Bares, Gastronomía, Hoteles y Fiestas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turismo MKT — Especialistas en Conversión por WhatsApp, Meta CAPI e IA 360° para Turismo y Eventos</title>
     <meta name="description"
-        content="Motor de aceleración algorítmica para Reels y TikToks de bares, boliches, gastronomía, eventos y hoteles. Inyección de retención y prueba social en los primeros 15 minutos. 0 herramientas, 100% productizado." />
-    <meta name="keywords"
-        content="TMKT AlgoBoost, Aceleración Algorítmica, Bares, Boliches, Gastronomía, Hoteles, Fiestas, Reservas, Reels, TikTok" />
-
-    <!-- Open Graph / SEO -->
+        content="Agencia especializada en hoteles, alojamientos, receptivos, excursiones, eventos y recitales. Convertimos consultas de WhatsApp en reservas confirmadas con Meta CAPI, AlgoBoost e IA 360°." />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="TMKT ALGOBOOST — Aceleración Algorítmica & Reservas" />
+    <meta property="og:title" content="Turismo MKT — Conversión por WhatsApp & Meta CAPI para Turismo y Eventos" />
     <meta property="og:description"
-        content="Inyectamos retención y comentarios reales de clientes en los primeros 15 minutos de tus publicaciones. Llená mesas, reventá fechas de eventos y dominá el feed de tu ciudad." />
+        content="Especialistas en tráfico a WhatsApp, Meta Conversions API e Inteligencia Artificial multiidioma para hoteles, excursiones, receptivos, eventos y recitales." />
     <meta property="og:image" content="favicon.png" />
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon.png?v=4" />
+    <link rel="shortcut icon" href="favicon.ico?v=4" />
+    <link rel="apple-touch-icon" href="favicon.png?v=4" />
 
-    <!-- Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/png" sizes="64x64" href="favicon.png?v=3" />
-    <link rel="shortcut icon" href="favicon.ico?v=3" />
-    <link rel="apple-touch-icon" href="favicon.png?v=3" />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
 
     <script>
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "primary-blue": "#0d59f2",
-                        "cyan-glow": "#00F2FF",
-                        "bg-dark": "#07090E",
-                        "surface-dark": "#0B111E",
-                        "card-dark": "#101726",
+                        sand: "#FAF8F5",
+                        sandDark: "#F1ECE4",
+                        ink: "#0B1B2B",
+                        inkSoft: "#334155",
+                        tealBrand: "#0F766E",
+                        tealLight: "#CCFBF1",
+                        amberBrand: "#D97706",
                     },
                     fontFamily: {
-                        "sans": ["Inter", "sans-serif"],
-                        "heading": ["Plus Jakarta Sans", "sans-serif"],
-                        "mono": ["JetBrains Mono", "monospace"]
-                    }
-                }
-            }
-        }
+                        sans: ["Inter", "sans-serif"],
+                        heading: ["Plus Jakarta Sans", "sans-serif"],
+                        serif: ["Instrument Serif", "serif"],
+                    },
+                },
+            },
+        };
     </script>
 
     <style>
-        :root {
-            --cyan: #00F2FF;
-            --blue: #0d59f2;
-            --dark: #07090E;
-        }
-
         body {
+            background-color: #FAF8F5;
+            color: #0B1B2B;
             font-family: 'Inter', sans-serif;
-            background-color: var(--dark);
-            color: #E2E8F0;
             overflow-x: hidden;
         }
-
-        .heading-font {
+        h1, h2, h3, h4, .font-heading {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
-
-        .mono {
-            font-family: 'JetBrains Mono', monospace;
+        .font-editorial {
+            font-family: 'Instrument Serif', serif;
         }
-
-        .glass {
-            background: rgba(11, 17, 30, 0.78);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .hero-overlay {
+            background: linear-gradient(120deg, rgba(11, 27, 43, 0.90) 0%, rgba(11, 27, 43, 0.78) 55%, rgba(15, 118, 110, 0.72) 100%);
         }
-
-        .glass-card {
-            background: linear-gradient(135deg, rgba(16, 23, 38, 0.75) 0%, rgba(10, 15, 26, 0.92) 100%);
-            backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        .card-hover {
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
-
-        .glass-card:hover {
-            border-color: rgba(0, 242, 255, 0.45);
-            box-shadow: 0 0 35px rgba(0, 242, 255, 0.14);
-            transform: translateY(-3px);
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(11, 27, 43, 0.12);
         }
-
-        .glow-cyan {
-            box-shadow: 0 0 45px rgba(0, 242, 255, 0.28);
-        }
-
-        .glow-cyan:hover {
-            box-shadow: 0 0 65px rgba(0, 242, 255, 0.48);
-        }
-
-        .hero-bg-gradient {
-            background: radial-gradient(circle at 50% 20%, rgba(13, 89, 242, 0.18) 0%, rgba(0, 242, 255, 0.06) 35%, rgba(7, 9, 14, 0.92) 70%, rgba(7, 9, 14, 1) 100%);
-        }
-
-        /* Range Slider */
-        input[type=range] {
-            -webkit-appearance: none;
-            background: #1B2438;
-            height: 6px;
-            border-radius: 3px;
-        }
-
-        input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            height: 22px;
-            width: 22px;
-            border-radius: 50%;
-            background: var(--cyan);
-            cursor: pointer;
-            box-shadow: 0 0 15px rgba(0, 242, 255, 0.85);
-            transition: transform 0.15s ease;
-        }
-
-        input[type=range]::-webkit-slider-thumb:hover {
-            transform: scale(1.18);
-        }
-
-        /* Language Switcher */
-        .lang-btn.active {
+        .tab-active {
+            background-color: #0B1B2B;
             color: #FFFFFF;
-            border-bottom: 2px solid var(--cyan);
-            font-weight: 700;
+            border-color: #0B1B2B;
         }
-
-        .lang-btn {
-            color: #64748B;
-            transition: all 0.2s ease;
-            cursor: pointer;
-            padding-bottom: 2px;
+        .lang-active {
+            background-color: #0F766E;
+            color: #FFFFFF;
         }
-
-        .lang-btn:hover {
-            color: var(--cyan);
+        @keyframes pulseSoft {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.45; }
+        }
+        .dot-live {
+            animation: pulseSoft 1.8s infinite;
         }
     </style>
 </head>
 
-<body class="antialiased selection:bg-cyan-glow/30 selection:text-cyan-glow">
+<body class="antialiased selection:bg-tealBrand selection:text-white">
 
-    <!-- Top Navigation Bar -->
-    <header class="fixed top-0 inset-x-0 z-50 glass border-b border-white/5 py-4 px-6 md:px-12 flex justify-between items-center">
-        <a href="#" class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-glow to-primary-blue p-0.5 shadow-lg shadow-cyan-glow/20">
-                <div class="w-full h-full bg-[#07090E] rounded-[10px] flex items-center justify-center">
-                    <span class="text-cyan-glow font-mono font-bold text-xs">TMKT</span>
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-sand/90 backdrop-blur-md border-b border-ink/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3 flex items-center justify-between gap-4">
+            <a href="#" class="flex items-center gap-2.5 group">
+                <div class="w-9 h-9 rounded-xl bg-ink text-white flex items-center justify-center font-heading font-extrabold text-sm tracking-tight group-hover:bg-tealBrand transition-colors">
+                    TM
                 </div>
-            </div>
-            <div>
-                <span class="heading-font font-black text-lg tracking-tight text-white block leading-tight">
-                    TMKT <span class="text-cyan-glow">ALGOBOOST</span>
-                </span>
-                <span class="text-[10px] font-mono tracking-widest text-slate-400 uppercase" data-i18n="nav_sub">Hospitality, Nightlife & Tourism</span>
-            </div>
-        </a>
-
-        <!-- Desktop Menu Links -->
-        <nav class="hidden md:flex items-center gap-7 text-xs font-semibold tracking-wide text-slate-300">
-            <a href="#beneficios" class="hover:text-cyan-glow transition-colors" data-i18n="nav_benefits">6 Beneficios</a>
-            <a href="#operatoria" class="hover:text-cyan-glow transition-colors" data-i18n="nav_operation">Fricción Cero</a>
-            <a href="#sectores" class="hover:text-cyan-glow transition-colors" data-i18n="nav_sectors">Bares, Fiestas & Hoteles</a>
-            <a href="#planes" class="hover:text-cyan-glow transition-colors" data-i18n="nav_plans">Soluciones</a>
-            <a href="#simulador" class="hover:text-cyan-glow transition-colors" data-i18n="nav_simulator">Proyección</a>
-        </nav>
-
-        <!-- Language Switcher & Action CTA -->
-        <div class="flex items-center gap-5">
-            <div class="flex gap-2.5 text-xs font-mono tracking-wider">
-                <button onclick="setLanguage('es')" class="lang-btn active" id="btn-es">ES</button>
-                <button onclick="setLanguage('pt')" class="lang-btn" id="btn-pt">PT</button>
-                <button onclick="setLanguage('en')" class="lang-btn" id="btn-en">EN</button>
-            </div>
-
-            <a href="https://wa.me/5491158432412?text=Hola,%20quiero%20agendar%20la%20Sesi%C3%B3n%20de%2015%20minutos%20para%20probar%20TMKT%20AlgoBoost%20en%20vivo"
-                target="_blank"
-                class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-cyan-glow to-blue-500 text-black px-5 py-2.5 rounded-full font-bold text-xs hover:opacity-95 transition-all glow-cyan cursor-pointer">
-                <span data-i18n="nav_cta">Agendar Demo (15 min)</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                <div>
+                    <span class="font-heading font-extrabold text-lg tracking-tight text-ink block leading-none">Turismo MKT</span>
+                    <span class="text-[11px] font-medium text-tealBrand tracking-wide uppercase" data-i18n="nav_sub">Ecosistema de Reservas 360°</span>
+                </div>
             </a>
+
+            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-inkSoft">
+                <a href="#nichos" class="hover:text-ink transition-colors" data-i18n="nav_niches">Nichos</a>
+                <a href="#ecosistema" class="hover:text-ink transition-colors" data-i18n="nav_method">Cómo Funciona</a>
+                <a href="#soluciones" class="hover:text-ink transition-colors" data-i18n="nav_plans">Soluciones</a>
+                <a href="#modulos" class="hover:text-ink transition-colors" data-i18n="nav_addons">Módulos</a>
+                <a href="#faq" class="hover:text-ink transition-colors" data-i18n="nav_faq">Preguntas</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <!-- Selector Idioma -->
+                <div class="inline-flex items-center bg-sandDark rounded-lg p-1 border border-ink/10 text-xs font-semibold">
+                    <button onclick="setLang('es')" id="btn-es" class="px-2.5 py-1 rounded-md transition-colors lang-active">ES</button>
+                    <button onclick="setLang('pt')" id="btn-pt" class="px-2.5 py-1 rounded-md transition-colors text-inkSoft hover:text-ink">PT</button>
+                    <button onclick="setLang('en')" id="btn-en" class="px-2.5 py-1 rounded-md transition-colors text-inkSoft hover:text-ink">EN</button>
+                </div>
+
+                <a id="nav-cta" href="https://wa.me/5491158432412?text=Hola%20Turismo%20MKT%2C%20quiero%20solicitar%20una%20Demo%20en%20vivo."
+                    target="_blank" rel="noopener"
+                    class="hidden sm:inline-flex items-center gap-2 bg-ink hover:bg-tealBrand text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition-colors shadow-sm"
+                    data-i18n="nav_cta">
+                    Solicitar Demo
+                </a>
+            </div>
         </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="relative min-h-screen flex items-center justify-center px-4 pt-28 pb-20 overflow-hidden hero-bg-gradient">
-            <!-- Background Video -->
-            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none">
-                <source src="hero-bg.mp4" type="video/mp4">
-            </video>
-            <div class="absolute inset-0 bg-gradient-to-b from-[#07090E]/60 via-[#07090E]/80 to-[#07090E] pointer-events-none"></div>
+    <!-- HERO EDITORIAL CON VIDEO -->
+    <section class="relative overflow-hidden bg-ink text-white">
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-35">
+            <source src="hero-bg.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-overlay absolute inset-0"></div>
 
-            <div class="max-w-6xl text-center z-10 px-2 relative">
-                <!-- Badge -->
-                <div class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-cyan-glow/30 bg-cyan-glow/10 backdrop-blur-md">
-                    <div class="w-2 h-2 rounded-full bg-cyan-glow animate-pulse"></div>
-                    <span class="mono text-cyan-glow tracking-wider text-[11px] md:text-xs uppercase font-bold" data-i18n="hero_badge">
-                        ⚡ TMKT ALGOBOOST ENGINE // BARES, BOLICHES, HOTELES & EXPERIENCIAS
-                    </span>
-                </div>
-
-                <!-- Main Headline -->
-                <h1 class="heading-font text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] xl:text-[3.8rem] font-black mb-6 tracking-tight leading-[1.12] text-white max-w-6xl mx-auto">
-                    <span class="inline-block" data-i18n="hero_title_p1">HACEMOS QUE TUS POSTS ROMPAN EL ALGORITMO</span><br class="hidden sm:inline" />
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-glow via-blue-400 to-indigo-500 inline-block" data-i18n="hero_title_p2">
-                        & LLENEN TU LOCAL DE CLIENTES
-                    </span>
-                </h1>
-
-                <!-- Subtitle -->
-                <p class="text-slate-300 text-base sm:text-xl md:text-2xl font-light max-w-4xl mx-auto mb-10 leading-relaxed">
-                    <span data-i18n="hero_sub_start">Inyección temprana de retención y comentarios contextuales reales en los primeros 15 minutos en Reels y TikTok.</span>
-                    <strong class="text-white font-semibold" data-i18n="hero_sub_highlight"> Más visibilidad en tu ciudad, menor costo publicitario</strong> 
-                    <span data-i18n="hero_sub_middle">y</span> 
-                    <strong class="text-cyan-glow font-semibold" data-i18n="hero_sub_end">explosión de reservas con Cero Trabas Operativas.</strong>
-                </p>
-
-                <!-- Value Proposition Pills -->
-                <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-12 text-xs font-mono text-slate-300">
-                    <div class="px-4 py-2 rounded-xl glass flex items-center gap-2 border border-white/5">
-                        <span class="text-cyan-glow font-bold">✓</span> <span data-i18n="pill_1">+ Boost Algorítmico & Alcance Local</span>
-                    </div>
-                    <div class="px-4 py-2 rounded-xl glass flex items-center gap-2 border border-white/5">
-                        <span class="text-cyan-glow font-bold">✓</span> <span data-i18n="pill_2">+ Prueba Social (Mesas, Entradas & Reservas)</span>
-                    </div>
-                    <div class="px-4 py-2 rounded-xl glass flex items-center gap-2 border border-white/5">
-                        <span class="text-cyan-glow font-bold">✓</span> <span data-i18n="pill_3">0 Herramientas (Fricción Cero)</span>
-                    </div>
-                </div>
-
-                <!-- Action CTAs -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="https://wa.me/5491158432412?text=Hola,%20quiero%20agendar%20la%20Sesi%C3%B3n%20en%20Vivo%20de%2015%20minutos%20para%20probar%20TMKT%20AlgoBoost%20en%20nuestro%20%C3%BAltimo%20post"
-                        target="_blank"
-                        class="w-full sm:w-auto bg-gradient-to-r from-cyan-glow to-blue-500 text-black px-8 py-4 rounded-full font-bold text-base md:text-lg transition-all hover:opacity-95 glow-cyan flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-cyan-glow/30">
-                        <span data-i18n="cta_hero_main">Agendar Sesión en Vivo (15 min) + Prueba Gratuita</span>
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-                    </a>
-                    <a href="#beneficios"
-                        class="w-full sm:w-auto px-8 py-4 rounded-full font-medium text-base md:text-lg text-slate-200 hover:text-white glass hover:bg-white/10 transition-all flex items-center justify-center cursor-pointer"
-                        data-i18n="cta_hero_sec">
-                        Ver los 6 Beneficios
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION: Live AlgoBoost Cockpit Visual (Comparativa Antes vs Después) -->
-        <section class="py-12 px-4 relative bg-[#07090E]">
-            <div class="max-w-6xl mx-auto">
-                <div class="relative rounded-3xl border border-cyan-glow/20 overflow-hidden shadow-2xl bg-surface-dark/80 backdrop-blur-md p-6 md:p-8">
-                    <!-- Top Cockpit Header -->
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-6 border-b border-white/5 mb-8">
-                        <div class="flex items-center gap-3">
-                            <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span>
-                            <span class="mono text-xs font-bold text-cyan-glow uppercase tracking-wider" data-i18n="cockpit_title">
-                                TMKT ENGINE // MONITOR DE ACELERACIÓN EN VIVO
-                            </span>
-                        </div>
-                        <div class="mono text-[11px] text-slate-400 bg-black/40 px-3 py-1.5 rounded-full border border-white/5">
-                            <span data-i18n="cockpit_window_label">Ventana de Inyección:</span> <span class="text-white font-bold" data-i18n="cockpit_window_val">Primeros 15 Minutos</span>
-                        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide text-teal-200">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 dot-live"></span>
+                        <span data-i18n="hero_badge">Especialistas en Hotelería, Receptivos, Excursiones y Eventos</span>
                     </div>
 
-                    <!-- Comparison Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Left: Sin AlgoBoost -->
-                        <div class="p-6 rounded-2xl bg-[#090D17] border border-red-500/20 relative">
-                            <div class="flex justify-between items-center mb-4">
-                                <span class="mono text-xs text-red-400 font-bold uppercase" data-i18n="cockpit_left_tag">❌ Publicación Convencional</span>
-                                <span class="text-[10px] mono px-2.5 py-1 rounded bg-red-500/10 text-red-400" data-i18n="cockpit_left_badge">Sin Impulso</span>
-                            </div>
-                            <h4 class="text-lg font-bold text-slate-200 mb-1" data-i18n="cockpit_left_title">Algoritmo Estancado</h4>
-                            <p class="text-xs text-slate-400 mb-6" data-i18n="cockpit_left_desc">Subís el video de la fiesta, plato o trago y queda planchado. Cero interacción, cero reservas.</p>
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08]" data-i18n="hero_title">
+                        Convertimos todas tus consultas en <span class="font-editorial italic font-normal text-amber-300">reservas confirmadas.</span>
+                    </h1>
 
-                            <!-- Metrics Box -->
-                            <div class="grid grid-cols-3 gap-2 p-3 rounded-xl bg-black/50 border border-white/5 text-center mb-4">
-                                <div>
-                                    <div class="text-base font-black text-slate-300">214</div>
-                                    <div class="text-[10px] text-slate-500 mono" data-i18n="cockpit_m_views">Reproducciones</div>
-                                </div>
-                                <div>
-                                    <div class="text-base font-black text-slate-300">6</div>
-                                    <div class="text-[10px] text-slate-500 mono" data-i18n="cockpit_m_likes">Likes</div>
-                                </div>
-                                <div>
-                                    <div class="text-base font-black text-red-400">0</div>
-                                    <div class="text-[10px] text-slate-500 mono" data-i18n="cockpit_m_comments">Comentarios</div>
-                                </div>
-                            </div>
-                            <div class="p-3 rounded-xl bg-red-950/20 border border-red-500/20 text-xs text-red-300/80" data-i18n="cockpit_left_warning">
-                                ⚠️ Resultado: Instagram frena la entrega a la hora. El local parece vacío y nadie se tienta a ir o reservar.
-                            </div>
-                        </div>
-
-                        <!-- Right: Con TMKT AlgoBoost -->
-                        <div class="p-6 rounded-2xl bg-[#0B1528] border border-cyan-glow/40 relative glow-cyan">
-                            <div class="flex justify-between items-center mb-4">
-                                <span class="mono text-xs text-cyan-glow font-bold uppercase" data-i18n="cockpit_right_tag">⚡ Con TMKT AlgoBoost</span>
-                                <span class="text-[10px] mono px-2.5 py-1 rounded bg-cyan-glow/20 text-cyan-glow font-bold animate-pulse" data-i18n="cockpit_right_badge">Dominando el Feed Local</span>
-                            </div>
-                            <h4 class="text-lg font-bold text-white mb-1" data-i18n="cockpit_right_title">Ruptura Algorítmica & Demanda Activa</h4>
-                            <p class="text-xs text-slate-300 mb-6" data-i18n="cockpit_right_desc">Retención forzada y aval social en los primeros 15 min. El algoritmo distribuye a toda la zona.</p>
-
-                            <!-- Metrics Box -->
-                            <div class="grid grid-cols-3 gap-2 p-3 rounded-xl bg-black/60 border border-cyan-glow/20 text-center mb-4">
-                                <div>
-                                    <div class="text-base font-black text-cyan-glow">5.420+</div>
-                                    <div class="text-[10px] text-slate-300 mono" data-i18n="cockpit_m_views">Reproducciones</div>
-                                </div>
-                                <div>
-                                    <div class="text-base font-black text-white">530</div>
-                                    <div class="text-[10px] text-slate-300 mono" data-i18n="cockpit_m_likes">Likes</div>
-                                </div>
-                                <div>
-                                    <div class="text-base font-black text-emerald-400">68</div>
-                                    <div class="text-[10px] text-slate-300 mono" data-i18n="cockpit_m_comments">Comentarios</div>
-                                </div>
-                            </div>
-
-                            <!-- Real Contextual Comments Feed -->
-                            <div class="space-y-2 p-3 rounded-xl bg-black/40 border border-white/5 text-[11px] font-mono">
-                                <div class="flex items-center gap-2 text-slate-300">
-                                    <span class="text-cyan-glow font-bold">@mariano_cba:</span> <span data-i18n="cockpit_c1">"¿A qué hora abre la barra hoy? ¿Sigue la promo 2x1 en gin?"</span>
-                                </div>
-                                <div class="flex items-center gap-2 text-slate-300">
-                                    <span class="text-cyan-glow font-bold">@valentinab:</span> <span data-i18n="cockpit_c2">"Hola! ¿Tienen mesa disponible para 6 personas este viernes?"</span>
-                                </div>
-                                <div class="flex items-center gap-2 text-slate-300">
-                                    <span class="text-cyan-glow font-bold">@lucas_eventos:</span> <span data-i18n="cockpit_c3">"Tremenda la fecha del sábado! Dónde se consiguen las anticipadas?"</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION: THE 6 REAL BENEFITS (AlgoBoost Engine) -->
-        <section id="beneficios" class="py-24 px-4 relative bg-[#090D17]">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <div class="mono text-cyan-glow text-xs uppercase tracking-widest mb-3 font-semibold" data-i18n="ben_badge">
-                        Impacto Comercial Garantizado
-                    </div>
-                    <h2 class="heading-font text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-4" data-i18n="ben_title">
-                        Los 6 Beneficios de TMKT AlgoBoost
-                    </h2>
-                    <p class="text-slate-400 text-sm md:text-base leading-relaxed" data-i18n="ben_subtitle">
-                        El algoritmo de Instagram y TikTok decide en los primeros 15 minutos si viraliza o sepulta una publicación. Diseñamos el motor que fuerza la concurrencia a tu negocio.
+                    <p class="text-base sm:text-lg text-slate-200 max-w-2xl leading-relaxed" data-i18n="hero_desc">
+                        Dejá de pagar pauta para recibir curiosos que nunca compran. Conectamos cada venta real cerrada en tu WhatsApp directo al algoritmo de Meta Ads (CAPI + AlgoBoost) y automatizamos tu atención 24/7 por texto y voz en Español, Portugués e Inglés.
                     </p>
+
+                    <div class="flex flex-col sm:flex-row gap-3.5 pt-2">
+                        <a id="hero-wa-cta" href="https://wa.me/5491158432412?text=Hola%20Turismo%20MKT%2C%20quiero%20probar%20la%20Demo%20360%20y%20ver%20c%C3%B3mo%20aplicarlo%20a%20mi%20negocio."
+                            target="_blank" rel="noopener"
+                            class="inline-flex items-center justify-center gap-2.5 bg-emerald-500 hover:bg-emerald-400 text-ink font-bold px-6 py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-950/30 text-sm sm:text-base">
+                            <span data-i18n="hero_cta1">Probar Demo en Vivo</span>
+                            <span>→</span>
+                        </a>
+                        <a href="#soluciones"
+                            class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-6 py-3.5 rounded-xl transition-all text-sm sm:text-base"
+                            data-i18n="hero_cta2">
+                            Ver Soluciones
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/15 max-w-xl">
+                        <div>
+                            <div class="text-xl sm:text-2xl font-heading font-extrabold text-white">0%</div>
+                            <div class="text-xs text-slate-300" data-i18n="stat_1">Comisión por reserva</div>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-heading font-extrabold text-white">ES · PT · EN</div>
+                            <div class="text-xs text-slate-300" data-i18n="stat_2">Atención 24/7 multiidioma</div>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-heading font-extrabold text-white">Omnicanal</div>
+                            <div class="text-xs text-slate-300" data-i18n="stat_3">Tracking real de conversiones</div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- 1. Boost Algorítmico -->
-                    <div class="glass-card p-8 rounded-3xl border border-cyan-glow/20 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-cyan-glow/10 text-cyan-glow flex items-center justify-center mb-6 font-mono font-bold text-lg">01</div>
-                            <h3 class="text-xl font-bold text-white mb-3" data-i18n="ben_1_title">+ Boost Algorítmico Inmediato</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed" data-i18n="ben_1_desc">
-                                Inyección temprana de retención obligatoria en los primeros 15 a 20 minutos de subida. Le indicamos a las plataformas que el contenido es de alto interés para forzar su recomendación en Explorar y Para Ti.
-                            </p>
+                <!-- Tarjeta derecha: Flujo en vivo visual -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white text-ink rounded-2xl p-6 shadow-2xl border border-white/20 space-y-4">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-tealBrand" data-i18n="card_tag">Arquitectura Turismo MKT</span>
+                                <h3 class="font-heading font-bold text-lg" data-i18n="card_title">Del primer clic a la reserva confirmada</h3>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold">Live</span>
                         </div>
-                        <div class="mt-6 pt-4 border-t border-white/5 mono text-xs text-cyan-glow font-semibold" data-i18n="ben_1_tag">Activación en Franja Crítica</div>
-                    </div>
 
-                    <!-- 2. Visibilidad Masiva Local -->
-                    <div class="glass-card p-8 rounded-3xl border border-blue-500/20 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-6 font-mono font-bold text-lg">02</div>
-                            <h3 class="text-xl font-bold text-white mb-3" data-i18n="ben_2_title">+ Visibilidad Masiva en tu Ciudad</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed" data-i18n="ben_2_desc">
-                                Rompa para siempre el tope artificial de 200 vistas. Hacemos que la gente que está buscando salir a comer, tomar algo o viajar en su ciudad vea su propuesta en el momento exacto.
-                            </p>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-sand">
+                                <span class="w-7 h-7 rounded-lg bg-ink text-white flex items-center justify-center font-bold text-xs shrink-0">1</span>
+                                <div>
+                                    <p class="font-semibold text-ink" data-i18n="flow_s1_t">Tráfico Segmentado (Meta Ads / Google)</p>
+                                    <p class="text-xs text-inkSoft" data-i18n="flow_s1_d">Turistas por idioma, geolocalización, aeropuerto o evento directo a tu WhatsApp.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-sand">
+                                <span class="w-7 h-7 rounded-lg bg-tealBrand text-white flex items-center justify-center font-bold text-xs shrink-0">2</span>
+                                <div>
+                                    <p class="font-semibold text-ink" data-i18n="flow_s2_t">Atención 24/7 + Voz en Tiempo Real</p>
+                                    <p class="text-xs text-inkSoft" data-i18n="flow_s2_d">Central omnicanal (WhatsApp, redes, web y llamadas) que cotiza al instante y hace seguimiento.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-emerald-50 border border-emerald-200">
+                                <span class="w-7 h-7 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shrink-0">3</span>
+                                <div>
+                                    <p class="font-semibold text-emerald-950" data-i18n="flow_s3_t">Confirmás la seña → Señal a Meta CAPI</p>
+                                    <p class="text-xs text-emerald-800" data-i18n="flow_s3_d">Con un emoji ✅ o palabra clave, Meta recibe el valor exacto y optimiza para más compradores.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mt-6 pt-4 border-t border-white/5 mono text-xs text-blue-400 font-semibold" data-i18n="ben_2_tag">Alcance Local Multiplicado</div>
-                    </div>
-
-                    <!-- 3. Prueba Social Real de Clientes -->
-                    <div class="glass-card p-8 rounded-3xl border border-indigo-500/20 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-6 font-mono font-bold text-lg">03</div>
-                            <h3 class="text-xl font-bold text-white mb-3" data-i18n="ben_3_title">+ Prueba Social Contextual Humana</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed" data-i18n="ben_3_desc">
-                                Comentarios contextuales reales adaptados a la gastronomía y turismo: consultas de cartas, mesas para grupos, horarios de barra, entradas para eventos y disponibilidad de estadía.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-white/5 mono text-xs text-indigo-400 font-semibold" data-i18n="ben_3_tag">Interacción Humana Real</div>
-                    </div>
-
-                    <!-- 4. Credibilidad & Efecto "Lugar Lleno" -->
-                    <div class="glass-card p-8 rounded-3xl border border-purple-500/20 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-6 font-mono font-bold text-lg">04</div>
-                            <h3 class="text-xl font-bold text-white mb-3" data-i18n="ben_4_title">+ Efecto "Lugar Lleno" & Deseo de Salir</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed" data-i18n="ben_4_desc">
-                                El efecto multitud en acción: nadie va a un bar, restaurante o fiesta que parece desierto. Un perfil repleto de movimiento genera FOMO inmediato y deseo incontrolable de asistir.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-white/5 mono text-xs text-purple-400 font-semibold" data-i18n="ben_4_tag">Efecto Multitud & FOMO</div>
-                    </div>
-
-                    <!-- 5. Conversión en Reservas -->
-                    <div class="glass-card p-8 rounded-3xl border border-emerald-500/20 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-6 font-mono font-bold text-lg">05</div>
-                            <h3 class="text-xl font-bold text-white mb-3" data-i18n="ben_5_title">+ Conversión Directa a Reservas & WhatsApp</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed" data-i18n="ben_5_desc">
-                                Cuando la gente ve comentarios de reservas en tus posteos, el comensal o turista no duda y hace clic directo a tu WhatsApp para asegurar su lugar antes de que se agote.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-white/5 mono text-xs text-emerald-400 font-semibold" data-i18n="ben_5_tag">Tracción Directa a WhatsApp</div>
-                    </div>
-
-                    <!-- 6. Menor Costo Publicitario -->
-                    <div class="glass-card p-8 rounded-3xl border border-cyan-glow/20 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-cyan-glow/10 text-cyan-glow flex items-center justify-center mb-6 font-mono font-bold text-lg">06</div>
-                            <h3 class="text-xl font-bold text-white mb-3" data-i18n="ben_6_title">- Costo Publicitario en Anuncios (Menor CPA)</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed" data-i18n="ben_6_desc">
-                                Si pautás publicidad local, hacerlo sobre posts que ya cuentan con prueba social y comentarios masivos reduce el costo por mensaje y por reserva hasta un 40%.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-white/5 mono text-xs text-cyan-glow font-semibold" data-i18n="ben_6_tag">Ahorro Directo en Ads</div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- SECTION: OPERATORIA FRICCIÓN CERO -->
-        <section id="operatoria" class="py-24 px-4 relative bg-[#07090E]">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <div class="mono text-cyan-glow text-xs uppercase tracking-widest mb-3 font-semibold" data-i18n="op_badge">
-                        Simplicidad Radical
-                    </div>
-                    <h2 class="heading-font text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-4" data-i18n="op_title">
-                        Operatoria Fricción Cero
-                    </h2>
-                    <p class="text-slate-400 text-sm md:text-base leading-relaxed" data-i18n="op_subtitle">
-                        El dueño o encargado no quiere otra herramienta para aprender ni trabas operativas. TMKT AlgoBoost es un servicio 100% productizado y llave en mano.
-                    </p>
+    <!-- POR QUÉ WHATSAPP -->
+    <section class="py-16 bg-sandDark/60 border-b border-ink/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl p-6 border border-ink/10 card-hover">
+                    <div class="w-10 h-10 rounded-xl bg-tealLight text-tealBrand flex items-center justify-center font-bold text-lg mb-4">💬</div>
+                    <h3 class="font-heading font-bold text-lg mb-2" data-i18n="why_1_t">WhatsApp convierte más que una web fría</h3>
+                    <p class="text-sm text-inkSoft leading-relaxed" data-i18n="why_1_d">En turismo y eventos VIP, el viajero pregunta fechas, traslados, menores o formas de pago antes de transferir. Resolver esa duda en segundos multiplica el cierre.</p>
                 </div>
+                <div class="bg-white rounded-2xl p-6 border border-ink/10 card-hover">
+                    <div class="w-10 h-10 rounded-xl bg-amber-100 text-amberBrand flex items-center justify-center font-bold text-lg mb-4">🎯</div>
+                    <h3 class="font-heading font-bold text-lg mb-2" data-i18n="why_2_t">Meta CAPI aprende quién te paga de verdad</h3>
+                    <p class="text-sm text-inkSoft leading-relaxed" data-i18n="why_2_d">Sin CAPI, Meta solo sabe quién hizo clic. Con nuestro puente, cada reserva cerrada en WhatsApp entrena al algoritmo con el monto real.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-ink/10 card-hover">
+                    <div class="w-10 h-10 rounded-xl bg-slate-100 text-ink flex items-center justify-center font-bold text-lg mb-4">⚡</div>
+                    <h3 class="font-heading font-bold text-lg mb-2" data-i18n="why_3_t">Sin cambiar tu número ni tu forma de trabajar</h3>
+                    <p class="text-sm text-inkSoft leading-relaxed" data-i18n="why_3_d">Conectás tu WhatsApp actual en 1 minuto por QR o código de 8 letras. Cero migraciones traumáticas y cero dependencias de terceros.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Cero Software -->
-                    <div class="glass-card p-8 rounded-3xl border border-white/10 text-center hover:border-cyan-glow/50 transition-all cursor-pointer">
-                        <div class="w-16 h-16 mx-auto rounded-2xl bg-cyan-glow/10 border border-cyan-glow/30 text-cyan-glow flex items-center justify-center mb-6">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3" data-i18n="op_1_title">0 Software ni Instalaciones</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed" data-i18n="op_1_desc">
-                            No tenés que descargar aplicaciones, aprender paneles complicados ni entrenar al encargado o recepcionista. Cero trabajo extra para tu equipo.
-                        </p>
+    <!-- NICHOS INTERACTIVOS -->
+    <section id="nichos" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-tealBrand" data-i18n="niche_eyebrow">100% Especializados</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight mt-2" data-i18n="niche_title">Diseñado para tu rubro, no plantillas genéricas</h2>
+                <p class="text-inkSoft mt-3" data-i18n="niche_sub">Elegí tu tipo de operación para ver cómo captamos demanda y convertimos cada consulta en WhatsApp:</p>
+            </div>
+
+            <div class="flex flex-wrap gap-2.5 mb-8">
+                <button onclick="selectNiche('hotel')" id="tab-hotel" class="px-4 py-2.5 rounded-xl border border-ink/15 text-sm font-semibold transition-all tab-active" data-i18n="tab_hotel">🏨 Hoteles & Alojamientos</button>
+                <button onclick="selectNiche('receptivo')" id="tab-receptivo" class="px-4 py-2.5 rounded-xl border border-ink/15 bg-white text-ink text-sm font-semibold transition-all hover:border-ink/40" data-i18n="tab_receptivo">🚐 Receptivos & Agencias</button>
+                <button onclick="selectNiche('excursion')" id="tab-excursion" class="px-4 py-2.5 rounded-xl border border-ink/15 bg-white text-ink text-sm font-semibold transition-all hover:border-ink/40" data-i18n="tab_excursion">🏔️ Excursiones & Tours</button>
+                <button onclick="selectNiche('evento')" id="tab-evento" class="px-4 py-2.5 rounded-xl border border-ink/15 bg-white text-ink text-sm font-semibold transition-all hover:border-ink/40" data-i18n="tab_evento">🎟️ Eventos & Recitales</button>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-ink/10 p-6 sm:p-10 shadow-sm grid lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-4">
+                    <span id="niche-badge" class="inline-block px-3 py-1 rounded-full bg-tealLight text-tealBrand text-xs font-bold">Hoteles, Cabañas & Lodges</span>
+                    <h3 id="niche-heading" class="font-heading text-2xl sm:text-3xl font-extrabold text-ink"></h3>
+                    <p id="niche-body" class="text-inkSoft leading-relaxed"></p>
+                    <ul id="niche-bullets" class="space-y-2.5 pt-2 text-sm text-ink"></ul>
+                    <div class="pt-4">
+                        <a id="niche-cta" href="https://wa.me/5491158432412" target="_blank" rel="noopener"
+                            class="inline-flex items-center gap-2 bg-ink hover:bg-tealBrand text-white font-semibold px-5 py-3 rounded-xl transition-colors text-sm">
+                            <span id="niche-cta-text">Quiero ver cómo aplica a mi hotel</span> →
+                        </a>
                     </div>
-
-                    <!-- Cero Riesgo -->
-                    <div class="glass-card p-8 rounded-3xl border border-white/10 text-center hover:border-blue-400/50 transition-all cursor-pointer">
-                        <div class="w-16 h-16 mx-auto rounded-2xl bg-blue-500/10 border border-blue-500/30 text-blue-400 flex items-center justify-center mb-6">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3" data-i18n="op_2_title">0 Contraseñas ni Riesgo de Cuenta</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed" data-i18n="op_2_desc">
-                            Nunca te pedimos contraseñas ni accesos a tus redes sociales. Es interacción externa 100% legítima con cero riesgo de penalizaciones o bloqueos.
-                        </p>
+                </div>
+                <div class="lg:col-span-5 bg-ink text-white rounded-2xl p-6 space-y-4">
+                    <div class="text-xs font-semibold uppercase tracking-wider text-emerald-300" data-i18n="niche_sim_label">Ejemplo de flujo en WhatsApp</div>
+                    <div class="bg-white/10 rounded-xl p-3.5 text-sm">
+                        <span class="text-[11px] text-slate-300 block mb-1" data-i18n="sim_client">Cliente (Meta Ads):</span>
+                        <p id="niche-chat-in" class="text-white font-medium"></p>
                     </div>
-
-                    <!-- 100% Llave en mano -->
-                    <div class="glass-card p-8 rounded-3xl border border-cyan-glow/40 text-center glow-cyan hover:border-cyan-glow transition-all cursor-pointer">
-                        <div class="w-16 h-16 mx-auto rounded-2xl bg-cyan-glow/20 border border-cyan-glow text-cyan-glow flex items-center justify-center mb-6">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3" data-i18n="op_3_title">Solo Envías el Link (O lo Extraemos)</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed" data-i18n="op_3_desc">
-                            Vos solo publicás normal el video o reel. Nos mandás el link por WhatsApp (o nuestro sistema lo detecta automáticamente). Del despegue nos encargamos nosotros.
-                        </p>
+                    <div class="bg-tealBrand/40 border border-teal-400/30 rounded-xl p-3.5 text-sm">
+                        <span class="text-[11px] text-teal-200 block mb-1" data-i18n="sim_ai">Turismo MKT (ES / PT / EN):</span>
+                        <p id="niche-chat-out" class="text-slate-100"></p>
+                    </div>
+                    <div class="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-3 text-xs text-emerald-200 flex items-center justify-between">
+                        <span id="niche-capi-event">✅ Meta CAPI: Purchase enviado</span>
+                        <span class="font-bold text-white" id="niche-capi-val">Valor dinámico</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- SECTION: DUAL SECTOR (Gastronomía vs Boliches/Hoteles) -->
-        <section id="sectores" class="py-24 px-4 relative bg-[#090D17]">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <div class="mono text-cyan-glow text-xs uppercase tracking-widest mb-3 font-semibold" data-i18n="sec_badge">
-                        Impacto Especializado por Modelo
-                    </div>
-                    <h2 class="heading-font text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-4" data-i18n="sec_title">
-                        Estrategia Adaptada a tu Nicho
-                    </h2>
-                    <p class="text-slate-400 text-sm md:text-base leading-relaxed" data-i18n="sec_subtitle">
-                        Nuestra aceleración algorítmica se sincroniza quirúrgicamente con las franjas horarias y días de mayor decisión de salida.
-                    </p>
+    <!-- CÓMO FUNCIONA (4 PASOS) -->
+    <section id="ecosistema" class="py-20 bg-ink text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400" data-i18n="eco_eyebrow">Método Probado</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight mt-2" data-i18n="eco_title">De principio a fin: captación, atención centralizada y cierre real</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                    <span class="text-xs font-bold text-amber-300">01</span>
+                    <h3 class="font-heading font-bold text-lg mt-2 mb-2" data-i18n="step_1_t">Pauta Inteligente + AlgoBoost</h3>
+                    <p class="text-sm text-slate-300" data-i18n="step_1_d">Segmentación por idioma del dispositivo, turistas en destino, aeropuertos y Lookalikes de compradores reales.</p>
                 </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                    <span class="text-xs font-bold text-amber-300">02</span>
+                    <h3 class="font-heading font-bold text-lg mt-2 mb-2" data-i18n="step_2_t">Recepción IA Texto & Voz</h3>
+                    <p class="text-sm text-slate-300" data-i18n="step_2_d">Responde mensajes y llamadas de WhatsApp en tiempo real en ES, PT o EN sin dejar enfriar al pasajero.</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                    <span class="text-xs font-bold text-amber-300">03</span>
+                    <h3 class="font-heading font-bold text-lg mt-2 mb-2" data-i18n="step_3_t">Kanban, Agenda & Follow-Up</h3>
+                    <p class="text-sm text-slate-300" data-i18n="step_3_d">Cada consulta queda ordenada por etapa y recibe seguimiento automático hasta confirmar la seña.</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                    <span class="text-xs font-bold text-emerald-400">04</span>
+                    <h3 class="font-heading font-bold text-lg mt-2 mb-2" data-i18n="step_4_t">Meta CAPI Sin Fricción</h3>
+                    <p class="text-sm text-slate-300" data-i18n="step_4_d">Al confirmar la venta o reserva en WhatsApp, devolvemos el monto exacto a Meta Ads para bajar tu costo por cierre.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Sector Bares y Restaurantes -->
-                    <div class="glass-card p-8 md:p-10 rounded-3xl relative overflow-hidden border border-cyan-glow/20">
-                        <div class="w-12 h-12 rounded-2xl bg-cyan-glow/10 border border-cyan-glow/30 text-cyan-glow flex items-center justify-center mb-6">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V3m0 5h7m-7 0H5m14 0a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3"/></svg>
-                        </div>
-                        <div class="mono text-xs font-bold text-cyan-glow mb-2 uppercase" data-i18n="sec_gastro_tag">GASTRONOMÍA // BARES, RESTAURANTES & CAFETERÍAS</div>
-                        <h3 class="text-2xl font-black text-white mb-4" data-i18n="sec_gastro_title">
-                            Bares, Restaurantes y Cervecerías
-                        </h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6" data-i18n="sec_gastro_desc">
-                            Llená los días difíciles (martes y miércoles), explotá los fines de semana y viralizá platos emblemáticos y promociones de tragos en toda tu zona de influencia.
-                        </p>
-                        <ul class="space-y-3 text-xs font-mono text-slate-300 mb-8">
-                            <li class="flex items-center gap-3">
-                                <span class="text-cyan-glow font-bold">»</span>
-                                <span data-i18n="sec_gastro_p1">Inyección en franjas previas a la cena y after office (18hs a 21hs).</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <span class="text-cyan-glow font-bold">»</span>
-                                <span data-i18n="sec_gastro_p2">Consultas masivas sobre menú, promos 2x1 y reserva de mesas para festejos.</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <span class="text-cyan-glow font-bold">»</span>
-                                <span data-i18n="sec_gastro_p3">Posicionamiento en la pestaña Explorar de clientes de tu misma ciudad.</span>
-                            </li>
+    <!-- SOLUCIONES (SIN PRECIOS CERRADOS) -->
+    <section id="soluciones" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-xs font-bold uppercase tracking-widest text-tealBrand" data-i18n="plans_eyebrow">Nuestras Soluciones</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight mt-2" data-i18n="plans_title">Elegí el nivel de implementación para tu negocio</h2>
+                <p class="text-inkSoft mt-3 text-sm sm:text-base" data-i18n="plans_sub">Implementación llave en mano adaptada al tamaño de tu hotel, agencia, operadora o productora.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Plan Inicial -->
+                <div class="bg-white rounded-3xl border border-ink/15 p-8 flex flex-col justify-between card-hover">
+                    <div>
+                        <span class="inline-block px-3 py-1 rounded-full bg-sandDark text-ink text-xs font-bold mb-4" data-i18n="p1_badge">ESENCIAL · TRÁFICO + TRACKING</span>
+                        <h3 class="font-heading text-2xl font-extrabold text-ink" data-i18n="p1_title">Plan Inicial: Meta CAPI + Campañas</h3>
+                        <p class="text-sm text-inkSoft mt-2 mb-6" data-i18n="p1_desc">Ideal si ya tenés quien responda tu WhatsApp y querés que tus campañas de Meta Ads optimicen por ventas reales.</p>
+
+                        <ul class="space-y-3 text-sm text-ink mb-8">
+                            <li class="flex items-start gap-2.5"><span class="text-tealBrand font-bold">✓</span><span data-i18n="p1_f1">Conexión directa de tu WhatsApp al Puente Meta CAPI (sin cambiar número).</span></li>
+                            <li class="flex items-start gap-2.5"><span class="text-tealBrand font-bold">✓</span><span data-i18n="p1_f2">Envío automático de conversiones reales con monto exacto (emoji ✅ o palabra clave).</span></li>
+                            <li class="flex items-start gap-2.5"><span class="text-tealBrand font-bold">✓</span><span data-i18n="p1_f3">Portal propio de auto-reconexión en 1 clic (QR o código de 8 letras).</span></li>
+                            <li class="flex items-start gap-2.5"><span class="text-tealBrand font-bold">✓</span><span data-i18n="p1_f4">Gestión completa de campañas en Meta Ads + AlgoBoost incluido.</span></li>
                         </ul>
-                        <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-slate-400">
-                            <span data-i18n="sec_gastro_obj">Objetivo: Ocupación Máxima Semanal</span>
-                            <span class="text-cyan-glow font-bold" data-i18n="sec_gastro_ticket">Alta Rotación de Mesas</span>
-                        </div>
                     </div>
 
-                    <!-- Sector Boliches, Hoteles y Turismo -->
-                    <div class="glass-card p-8 md:p-10 rounded-3xl relative overflow-hidden border border-blue-500/20">
-                        <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 text-blue-400 flex items-center justify-center mb-6">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
-                        </div>
-                        <div class="mono text-xs font-bold text-blue-400 mb-2 uppercase" data-i18n="sec_night_tag">NIGHTLIFE & TURISMO // DISCOTECAS, HOTELES & EVENTOS</div>
-                        <h3 class="text-2xl font-black text-white mb-4" data-i18n="sec_night_title">
-                            Boliches, Festivales, Hoteles & Escapadas
-                        </h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6" data-i18n="sec_night_desc">
-                            Agotá preventas de entradas, completá las reservas de mesas VIP y asegurá la ocupación de cabañas u hoteles para fines de semana largos y temporada.
-                        </p>
-                        <ul class="space-y-3 text-xs font-mono text-slate-300 mb-8">
-                            <li class="flex items-center gap-3">
-                                <span class="text-blue-400 font-bold">»</span>
-                                <span data-i18n="sec_night_p1">Disparo algorítmico los días clave de compra de tickets (jueves y viernes).</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <span class="text-blue-400 font-bold">»</span>
-                                <span data-i18n="sec_night_p2">Creación de efecto FOMO (Miedo a Quedarse Afuera) en público joven y turistas.</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <span class="text-blue-400 font-bold">»</span>
-                                <span data-i18n="sec_night_p3">Atracción de viajeros de ciudades emisoras clave con alta capacidad de gasto.</span>
-                            </li>
+                    <a href="https://wa.me/5491158432412?text=Hola%20Turismo%20MKT%2C%20me%20interesa%20cotizar%20el%20Plan%20Inicial%20(Meta%20CAPI%20%2B%20Campa%C3%B1as)."
+                        target="_blank" rel="noopener"
+                        class="w-full inline-flex items-center justify-center gap-2 bg-sandDark hover:bg-ink hover:text-white text-ink font-bold py-3.5 px-5 rounded-xl transition-colors text-sm"
+                        data-i18n="p1_cta">
+                        Solicitar Diagnóstico Plan Inicial →
+                    </a>
+                </div>
+
+                <!-- Ecosistema 360 -->
+                <div class="bg-ink text-white rounded-3xl border-2 border-tealBrand p-8 flex flex-col justify-between relative shadow-xl card-hover">
+                    <span class="absolute -top-3.5 right-8 bg-emerald-400 text-ink text-xs font-extrabold px-3.5 py-1 rounded-full uppercase tracking-wide" data-i18n="p2_popular">Más Elegido</span>
+                    <div>
+                        <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-emerald-300 text-xs font-bold mb-4" data-i18n="p2_badge">LLAVE EN MANO · CENTRAL COMPLETA</span>
+                        <h3 class="font-heading text-2xl font-extrabold" data-i18n="p2_title">Ecosistema Turismo MKT 360°</h3>
+                        <p class="text-sm text-slate-300 mt-2 mb-6" data-i18n="p2_desc">Para hoteles, receptivos, excursiones y productoras que quieren cero consultas perdidas, atención 24/7 y control total.</p>
+
+                        <ul class="space-y-3 text-sm text-slate-100 mb-8">
+                            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span data-i18n="p2_f1">Todo lo del Plan Inicial (Meta CAPI + Gestión de Campañas + AlgoBoost).</span></li>
+                            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span data-i18n="p2_f2">Recepcionista IA Multiidioma 24/7 en WhatsApp (Español, Portugués e Inglés).</span></li>
+                            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span data-i18n="p2_f3">Recepcionista IA por Voz en Tiempo Real para llamadas entrantes de WhatsApp.</span></li>
+                            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span data-i18n="p2_f4">CRM Kanban de reservas + Agenda automática + Follow-Up de cotizaciones.</span></li>
+                            <li class="flex items-start gap-2.5"><span class="text-emerald-400 font-bold">✓</span><span data-i18n="p2_f5">Capacitación a tu equipo y asistencia 24/7.</span></li>
                         </ul>
-                        <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-slate-400">
-                            <span data-i18n="sec_night_obj">Objetivo: Sold Out & Reservas Anticipadas</span>
-                            <span class="text-blue-400 font-bold" data-i18n="sec_night_ticket">Capacidad Completa</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION: PRODUCTIZED PLANS & SOLUTIONS -->
-        <section id="planes" class="py-24 px-4 relative bg-[#07090E]">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <div class="mono text-cyan-glow text-xs uppercase tracking-widest mb-3 font-semibold" data-i18n="plan_badge">
-                        Soluciones Productizadas TMKT
-                    </div>
-                    <h2 class="heading-font text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-4" data-i18n="plan_title">
-                        Planes Oficiales & Coberturas Especiales
-                    </h2>
-                    <p class="text-slate-400 text-sm md:text-base leading-relaxed" data-i18n="plan_subtitle">
-                        Desde aceleración semanal para locales hasta cobertura integral de temporada y festivales masivos.
-                    </p>
-                </div>
-
-                <!-- Top 3 AlgoBoost Cards Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                    <!-- PLAN 1: Impulso -->
-                    <div class="glass-card p-8 rounded-3xl flex flex-col justify-between border border-white/5">
-                        <div>
-                            <div class="mono text-[11px] text-slate-400 font-bold uppercase mb-2" data-i18n="plan_1_badge">PLAN 01 // IMPULSO LOCAL</div>
-                            <h3 class="text-xl font-bold text-white mb-2" data-i18n="plan_1_title">Validación & Tracción</h3>
-                            <div class="text-3xl font-black text-cyan-glow mb-4">$57 <span class="text-xs font-normal text-slate-400" data-i18n="plan_1_per">USD / mes</span></div>
-                            <p class="text-slate-400 text-xs leading-relaxed mb-6" data-i18n="plan_1_desc">
-                                Ideal para bares, cafeterías y restaurantes que publican 3 veces por semana y quieren salir del estancamiento.
-                            </p>
-                            <ul class="space-y-3 text-xs font-mono text-slate-300 mb-8">
-                                <li class="flex items-center gap-2"><span class="text-cyan-glow font-bold">✓</span> <span data-i18n="plan_1_f1">12 publicaciones / mes (3x por semana)</span></li>
-                                <li class="flex items-center gap-2"><span class="text-cyan-glow font-bold">✓</span> <span data-i18n="plan_1_f2">Empuje algorítmico en primeros 20 min</span></li>
-                                <li class="flex items-center gap-2"><span class="text-cyan-glow font-bold">✓</span> <span data-i18n="plan_1_f3">Comentarios contextuales de reservas y cartas</span></li>
-                                <li class="flex items-center gap-2"><span class="text-cyan-glow font-bold">✓</span> <span data-i18n="plan_1_f4">Gestión directa por WhatsApp (Fricción Cero)</span></li>
-                            </ul>
-                        </div>
-                        <a href="https://wa.me/5491158432412?text=Hola,%20quisiera%20activar%20el%20Plan%20Impulso%20Local%20de%20$57%20USD%20para%20mi%20local"
-                            target="_blank"
-                            class="w-full text-center py-3.5 bg-white/5 hover:bg-white/10 text-white font-bold text-xs rounded-xl border border-white/10 transition-all cursor-pointer">
-                            <span data-i18n="plan_1_btn">Elegir Plan Impulso ($57)</span>
-                        </a>
                     </div>
 
-                    <!-- PLAN 2: Crecimiento (Recomendado) -->
-                    <div class="glass-card p-8 rounded-3xl flex flex-col justify-between border-2 border-cyan-glow relative shadow-lg shadow-cyan-glow/10">
-                        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-cyan-glow text-black mono text-[10px] font-black uppercase tracking-wider shadow-md" data-i18n="plan_2_popular">
-                            MÁS ELEGIDO // ALTO RENDIMIENTO
-                        </div>
-                        <div>
-                            <div class="mono text-[11px] text-cyan-glow font-bold uppercase mb-2" data-i18n="plan_2_badge">PLAN 02 // CRECIMIENTO NOCTURNO</div>
-                            <h3 class="text-xl font-bold text-white mb-2" data-i18n="plan_2_title">Exposición & Fines de Semana</h3>
-                            <div class="text-3xl font-black text-cyan-glow mb-4">$97 <span class="text-xs font-normal text-slate-400" data-i18n="plan_2_per">USD / mes</span></div>
-                            <p class="text-slate-400 text-xs leading-relaxed mb-6" data-i18n="plan_2_desc">
-                                Para locales nocturnos, hoteles y boliches con ritmo constante que buscan llenar fechas y atraer público nuevo.
-                            </p>
-                            <ul class="space-y-3 text-xs font-mono text-slate-300 mb-8">
-                                <li class="flex items-center gap-2"><span class="text-cyan-glow font-bold">✓</span> <span data-i18n="plan_2_f1">20 publicaciones / mes (5x por semana)</span></li>
-                                <li class="flex items-center gap-2"><span class="text-cyan-glow font-bold">✓</span> <span data-i18n="plan_2_f2">Todo lo del Plan 1 (Impulso 20 min)</span></li>
-                                <li class="flex items-center gap-2"><span class="text-cyan-glow font-bold">✓</span> <span data-i18n="plan_2_f3">Cobertura prioritaria en franjas nocturnas y findes</span></li>
-                                <li class="flex items-center gap-2"><span class="text-cyan-glow font-bold">✓</span> <span data-i18n="plan_2_f4">Difusión en cuentas satélite de turismo & salidas</span></li>
-                            </ul>
-                        </div>
-                        <a href="https://wa.me/5491158432412?text=Hola,%20quisiera%20activar%20el%20Plan%20Crecimiento%20de%20$97%20USD%20para%20mi%20negocio"
-                            target="_blank"
-                            class="w-full text-center py-3.5 bg-gradient-to-r from-cyan-glow to-blue-500 text-black font-extrabold text-xs rounded-xl shadow-lg transition-all hover:opacity-95 cursor-pointer glow-cyan">
-                            <span data-i18n="plan_2_btn">Elegir Plan Crecimiento ($97)</span>
-                        </a>
-                    </div>
-
-                    <!-- PLAN 3: Dominación Diaria -->
-                    <div class="glass-card p-8 rounded-3xl flex flex-col justify-between border border-white/5">
-                        <div>
-                            <div class="mono text-[11px] text-slate-400 font-bold uppercase mb-2" data-i18n="plan_3_badge">PLAN 03 // DIARIO FULL</div>
-                            <h3 class="text-xl font-bold text-white mb-2" data-i18n="plan_3_title">Dominación Total de la Ciudad</h3>
-                            <div class="text-3xl font-black text-cyan-glow mb-4">$127 <span class="text-xs font-normal text-slate-400" data-i18n="plan_3_per">USD / mes</span></div>
-                            <p class="text-slate-400 text-xs leading-relaxed mb-6" data-i18n="plan_3_desc">
-                                Para complejos turísticos, cadenas de bares y discotecas de primer nivel que publican a diario.
-                            </p>
-                            <ul class="space-y-3 text-xs font-mono text-slate-300 mb-8">
-                                <li class="flex items-center gap-2"><span class="text-cyan-glow font-bold">✓</span> <span data-i18n="plan_3_f1">30 publicaciones / mes (1 post diario garantizado)</span></li>
-                                <li class="flex items-center gap-2"><span class="text-cyan-glow font-bold">✓</span> <span data-i18n="plan_3_f2">Máxima prioridad de inyección y retención</span></li>
-                                <li class="flex items-center gap-2"><span class="text-cyan-glow font-bold">✓</span> <span data-i18n="plan_3_f3">Replicación constante en red de cuentas satélites</span></li>
-                                <li class="flex items-center gap-2"><span class="text-cyan-glow font-bold">✓</span> <span data-i18n="plan_3_f4">Reporte mensual avanzado de impacto y alcance</span></li>
-                            </ul>
-                        </div>
-                        <a href="https://wa.me/5491158432412?text=Hola,%20quisiera%20activar%20el%20Plan%20Dominaci%C3%B3n%20Diaria%20de%20$127%20USD"
-                            target="_blank"
-                            class="w-full text-center py-3.5 bg-white/5 hover:bg-white/10 text-white font-bold text-xs rounded-xl border border-white/10 transition-all cursor-pointer">
-                            <span data-i18n="plan_3_btn">Elegir Plan Diario ($127)</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Bottom Full-Width Horizontal Banner: Fiestas, Festivales & Temporada Alta -->
-                <div class="glass-card p-8 md:p-10 rounded-3xl border border-blue-500/40 bg-gradient-to-r from-blue-950/40 via-[#0B1528] to-[#07090E] relative overflow-hidden shadow-2xl">
-                    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
-                        <div class="max-w-3xl">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/40 mono text-[10px] text-blue-300 font-bold uppercase mb-4">
-                                <span data-i18n="event_badge">🎉 COBERTURA ESPECIAL // FIESTAS, FESTIVALES & TEMPORADA ALTA</span>
-                            </div>
-                            <h3 class="text-2xl md:text-3xl font-black text-white mb-3" data-i18n="event_title">
-                                Campaña de Choque para Fechas Masivas & Sold Out
-                            </h3>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-6" data-i18n="event_desc">
-                                Diseñado para eventos únicos, recitales, aperturas de temporada, fines de semana XXL o festivales. Inyectamos hiper-visibilidad y FOMO masivo en los días previos para detonar la preventa de entradas y agotar la capacidad antes del evento.
-                            </p>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono text-slate-300">
-                                <div class="flex items-center gap-2">
-                                    <span class="text-cyan-glow font-bold">✓</span> <span data-i18n="event_f1">Aceleración intensiva en preventa de tickets</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <span class="text-cyan-glow font-bold">✓</span> <span data-i18n="event_f2">Inyección masiva de retención y comentarios de compra</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <span class="text-cyan-glow font-bold">✓</span> <span data-i18n="event_f3">Amplificación en red de perfiles nocturnos y de turismo</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <span class="text-cyan-glow font-bold">✓</span> <span data-i18n="event_f4">Reducción radical del costo por entrada vendida</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Price & CTA Column -->
-                        <div class="lg:text-right w-full lg:w-auto flex flex-col items-start lg:items-end gap-3 min-w-[240px]">
-                            <div class="mono text-xs text-slate-400 uppercase" data-i18n="event_price_label">Inversión Llave en Mano por Fecha</div>
-                            <div class="text-3xl md:text-4xl font-black text-white">
-                                $300 - $600 <span class="text-xs font-normal text-slate-400" data-i18n="event_per">USD</span>
-                            </div>
-                            <a href="https://wa.me/5491158432412?text=Hola,%20quisiera%20solicitar%20la%20Cobertura%20Especial%20para%20Fiestas,%20Festivales%20o%20Temporada%20Alta"
-                                target="_blank"
-                                class="w-full sm:w-auto text-center px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-glow text-black font-extrabold text-xs rounded-xl shadow-lg transition-all hover:opacity-95 cursor-pointer glow-cyan">
-                                <span data-i18n="event_btn">Consultar Cobertura para Evento</span>
-                            </a>
-                            <span class="text-[10px] mono text-slate-400" data-i18n="event_subnote">Cupos limitados por fecha para garantizar impacto</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION: Interactive AlgoBoost Impact Calculator -->
-        <section id="simulador" class="py-24 px-4 relative bg-[#090D17]">
-            <div class="max-w-4xl mx-auto glass-card p-8 md:p-12 rounded-3xl border border-cyan-glow/30 glow-cyan">
-                <div class="text-center mb-10">
-                    <div class="mono text-cyan-glow text-xs uppercase tracking-widest mb-2 font-bold" data-i18n="sim_badge">
-                        Calculadora de Retorno Algorítmico
-                    </div>
-                    <h2 class="heading-font text-2xl md:text-4xl font-extrabold text-white mb-3" data-i18n="sim_title">
-                        Proyectá el Impacto en tu Local o Evento
-                    </h2>
-                    <p class="text-slate-400 text-xs md:text-sm" data-i18n="sim_subtitle">
-                        Ajustá la cantidad de videos o reels que publicás al mes para estimar el alcance local, las consultas de reservas y el ahorro en publicidad.
-                    </p>
-                </div>
-
-                <!-- Slider Control -->
-                <div class="mb-10 space-y-4">
-                    <div class="flex justify-between items-center text-sm font-mono">
-                        <span class="text-slate-400" data-i18n="sim_label">Frecuencia Mensual de Publicación:</span>
-                        <span id="capacity-display" class="text-cyan-glow text-xl font-black">12 Videos / Posts al mes</span>
-                    </div>
-                    <input type="range" id="capacity-slider" min="4" max="30" step="2" value="12" class="w-full" oninput="updateSimulator(this.value)">
-                    <div class="flex justify-between text-[11px] font-mono text-slate-500">
-                        <span data-i18n="sim_step_1">4 (1 por semana)</span>
-                        <span data-i18n="sim_step_2">12 (3 por semana)</span>
-                        <span data-i18n="sim_step_3">20 (5 por semana)</span>
-                        <span data-i18n="sim_step_4">30 (1 diario)</span>
-                    </div>
-                </div>
-
-                <!-- Output Cards -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-                    <div class="p-4 rounded-2xl bg-black/40 border border-white/5 text-center">
-                        <div class="mono text-[10px] text-slate-400 uppercase mb-1" data-i18n="sim_out1_title">Alcance Local Estimado</div>
-                        <div id="reach-display" class="text-xl md:text-2xl font-black text-white">26.400 - 66.000</div>
-                        <div class="text-[10px] text-cyan-glow/80 mt-1" data-i18n="sim_out1_sub">Personas en tu ciudad</div>
-                    </div>
-                    <div class="p-4 rounded-2xl bg-black/40 border border-white/5 text-center">
-                        <div class="mono text-[10px] text-slate-400 uppercase mb-1" data-i18n="sim_out2_title">Prueba Social Inyectada</div>
-                        <div id="signals-display" class="text-xl md:text-2xl font-black text-white">144+</div>
-                        <div class="text-[10px] text-cyan-glow/80 mt-1" data-i18n="sim_out2_sub">Comentarios reales de clientes</div>
-                    </div>
-                    <div class="p-4 rounded-2xl bg-black/40 border border-white/5 text-center">
-                        <div class="mono text-[10px] text-slate-400 uppercase mb-1" data-i18n="sim_out3_title">Ahorro Estimado en Ads</div>
-                        <div id="window-display" class="text-xl md:text-2xl font-black text-emerald-400">$264 USD</div>
-                        <div class="text-[10px] text-slate-500 mt-1" data-i18n="sim_out3_sub">Ahorro por menor CPA</div>
-                    </div>
-                </div>
-
-                <div class="text-center">
-                    <a href="https://wa.me/5491158432412?text=Hola,%20hice%20el%20c%C3%A1lculo%20en%20TMKT%20y%20quiero%20hacer%20la%20prueba%20gratuita%20en%20vivo%20en%20el%20Instagram%20de%20mi%20local"
-                        target="_blank"
-                        class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-glow to-blue-500 text-black px-8 py-3.5 rounded-full font-bold text-sm hover:opacity-95 transition-all glow-cyan cursor-pointer">
-                        <span data-i18n="sim_cta">Probar AlgoBoost en mis Videos (Sesión 15 min)</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                    <a href="https://wa.me/5491158432412?text=Hola%20Turismo%20MKT%2C%20quiero%20probar%20la%20Demo%20y%20cotizar%20el%20Ecosistema%20Turismo%20360%C2%B0."
+                        target="_blank" rel="noopener"
+                        class="w-full inline-flex items-center justify-center gap-2 bg-emerald-400 hover:bg-emerald-300 text-ink font-extrabold py-3.5 px-5 rounded-xl transition-colors text-sm"
+                        data-i18n="p2_cta">
+                        Probar Demo 360° y Cotizar →
                     </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Final Large CTA -->
-        <section class="py-24 px-4 relative bg-[#07090E] border-t border-white/5">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="mono text-cyan-glow text-xs uppercase tracking-widest mb-3 font-semibold" data-i18n="final_badge">
-                    Demostración en Tiempo Real
-                </div>
-                <h2 class="heading-font text-3xl md:text-5xl font-black text-white mb-6" data-i18n="final_title">
-                    Mirá Cómo Despega tu Último Post en 3 Minutos
-                </h2>
-                <p class="text-slate-300 text-base md:text-lg mb-10 max-w-2xl mx-auto" data-i18n="final_sub">
-                    Coordinamos una sesión en vivo de 15 minutos (por videollamada o directo por WhatsApp). Auditamos tu cuenta, ejecutamos la prueba en tiempo real en la última publicación de tu local y ves los resultados en directo.
-                </p>
-                <a href="https://wa.me/5491158432412?text=Hola,%20quiero%20agendar%20la%20Sesi%C3%B3n%20en%20Vivo%20de%2015%20minutos%20para%20probar%20TMKT%20AlgoBoost%20en%20nuestro%20posteo"
-                    target="_blank"
-                    class="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-glow to-blue-500 text-black px-10 py-5 rounded-full font-extrabold text-lg md:text-xl hover:scale-105 transition-all glow-cyan cursor-pointer">
-                    <span data-i18n="cta_final">Agendar Sesión de 15 min + Prueba en Vivo</span>
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-                </a>
-                <p class="text-xs font-mono text-slate-500 mt-4" data-i18n="cta_subnote">
-                    Sin contraseñas. Sin instalaciones. Cupos limitados por rubro y ciudad para garantizar exclusividad.
-                </p>
+    <!-- MÓDULOS ADICIONALES -->
+    <section id="modulos" class="py-16 bg-sandDark/70 border-y border-ink/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-tealBrand" data-i18n="mod_eyebrow">Módulos Adicionales</span>
+                <h2 class="font-heading text-2xl sm:text-3xl font-extrabold mt-2" data-i18n="mod_title">Potenciá tu ecosistema según lo que necesite tu plaza</h2>
             </div>
-        </section>
-    </main>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="bg-white rounded-2xl p-5 border border-ink/10">
+                    <h4 class="font-heading font-bold text-base mb-1.5" data-i18n="m1_t">Google Ads Alta Intención</h4>
+                    <p class="text-xs text-inkSoft leading-relaxed" data-i18n="m1_d">Capturá viajeros que ya están buscando reservar hotel, excursión o entradas hoy, derivando todo a tu embudo de WhatsApp.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-5 border border-ink/10">
+                    <h4 class="font-heading font-bold text-base mb-1.5" data-i18n="m2_t">Motor Reseñas Google Maps</h4>
+                    <p class="text-xs text-inkSoft leading-relaxed" data-i18n="m2_d">Encuesta automática post-estadía por WhatsApp: clientes felices van directo a Google Maps; quejas llegan en privado al dueño.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-5 border border-ink/10">
+                    <h4 class="font-heading font-bold text-base mb-1.5" data-i18n="m3_t">Creatividades & Viralidad</h4>
+                    <p class="text-xs text-inkSoft leading-relaxed" data-i18n="m3_d">Producción de Reels y anuncios basados en formatos validados del sector turístico para bajar costos desde el día uno.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-5 border border-ink/10">
+                    <h4 class="font-heading font-bold text-base mb-1.5" data-i18n="m4_t">Contact Center & Telefonía SIP</h4>
+                    <p class="text-xs text-inkSoft leading-relaxed" data-i18n="m4_d">Central multi-agente con líneas WhatsApp + telefonía fija IP (PABX/SIP) y grabación de llamadas para equipos grandes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="py-16 px-4 border-t border-white/5 bg-[#07090E] relative">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-cyan-glow to-blue-600 p-0.5">
-                    <div class="w-full h-full bg-[#07090E] rounded-[10px] flex items-center justify-center">
-                        <span class="text-cyan-glow font-mono font-bold text-xs">TMKT</span>
+    <!-- FAQ -->
+    <section id="faq" class="py-20">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-heading text-3xl font-extrabold text-center mb-10" data-i18n="faq_title">Preguntas Frecuentes</h2>
+                        <div class="space-y-3" id="faq-list">
+                <div class="bg-white rounded-2xl border border-ink/10 overflow-hidden">
+                    <button onclick="toggleFaq(0)" class="w-full text-left px-6 py-4 font-heading font-bold text-base flex items-center justify-between gap-4">
+                        <span data-i18n="faq_q1">¿Qué canales centraliza Turismo MKT y cómo funciona la atención 24/7?</span>
+                        <span class="text-tealBrand text-xl shrink-0">+</span>
+                    </button>
+                    <div id="faq-a-0" class="hidden px-6 pb-5 text-sm text-inkSoft leading-relaxed" data-i18n="faq_a1">
+                        Unificamos tus consultas de WhatsApp, Instagram, Messenger, formulario web y llamadas en una sola central omnicanal. Nuestra IA atiende al instante en Español, Portugués e Inglés, organiza cada lead en tu CRM Kanban y agenda reuniones o reservas automáticamente.
                     </div>
                 </div>
-                <div class="heading-font text-2xl font-black tracking-tight text-white">
-                    TMKT <span class="text-cyan-glow">ALGOBOOST</span>
+                <div class="bg-white rounded-2xl border border-ink/10 overflow-hidden">
+                    <button onclick="toggleFaq(1)" class="w-full text-left px-6 py-4 font-heading font-bold text-base flex items-center justify-between gap-4">
+                        <span data-i18n="faq_q2">¿Cómo funciona la Recepcionista IA por Voz para llamadas y telefonía?</span>
+                        <span class="text-tealBrand text-xl shrink-0">+</span>
+                    </button>
+                    <div id="faq-a-1" class="hidden px-6 pb-5 text-sm text-inkSoft leading-relaxed" data-i18n="faq_a2">
+                        Atiende llamadas entrantes en tiempo real con voz natural, responde sobre disponibilidad, tarifas y servicios, agenda citas o reservas y deja el audio grabado junto con el resumen dentro del chat. También puede conectarse a centrales telefónicas IP (SIP / PABX).
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl border border-ink/10 overflow-hidden">
+                    <button onclick="toggleFaq(2)" class="w-full text-left px-6 py-4 font-heading font-bold text-base flex items-center justify-between gap-4">
+                        <span data-i18n="faq_q3">¿Cómo logran que Meta Ads y Google Ads traigan compradores reales y no curiosos?</span>
+                        <span class="text-tealBrand text-xl shrink-0">+</span>
+                    </button>
+                    <div id="faq-a-2" class="hidden px-6 pb-5 text-sm text-inkSoft leading-relaxed" data-i18n="faq_a3">
+                        Combinamos segmentación turística (idioma del dispositivo, aeropuertos, viajeros en destino) + AlgoBoost + Meta Conversions API (CAPI). Cada vez que confirmás una reserva o entrada, enviamos el valor exacto al algoritmo para que busque perfiles similares que sí pagan.
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl border border-ink/10 overflow-hidden">
+                    <button onclick="toggleFaq(3)" class="w-full text-left px-6 py-4 font-heading font-bold text-base flex items-center justify-between gap-4">
+                        <span data-i18n="faq_q4">¿Tengo que cambiar mis números actuales o perder mi historial?</span>
+                        <span class="text-tealBrand text-xl shrink-0">+</span>
+                    </button>
+                    <div id="faq-a-3" class="hidden px-6 pb-5 text-sm text-inkSoft leading-relaxed" data-i18n="faq_a4">
+                        No. Conectamos tus líneas actuales de WhatsApp Business (por QR o código de 8 letras) y tus cuentas publicitarias en minutos sin perder conversaciones, contactos ni tu número comercial.
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl border border-ink/10 overflow-hidden">
+                    <button onclick="toggleFaq(4)" class="w-full text-left px-6 py-4 font-heading font-bold text-base flex items-center justify-between gap-4">
+                        <span data-i18n="faq_q5">¿Cómo se implementa y por qué no publican precios fijos en la web?</span>
+                        <span class="text-tealBrand text-xl shrink-0">+</span>
+                    </button>
+                    <div id="faq-a-4" class="hidden px-6 pb-5 text-sm text-inkSoft leading-relaxed" data-i18n="faq_a5">
+                        Entregamos el ecosistema llave en mano adaptado al volumen de consultas, cantidad de puestos, idiomas y módulos que necesite tu hotel, receptivo, operadora o productora. En una demo en vivo de 15 minutos armamos tu propuesta exacta.
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-slate-400 text-xs uppercase tracking-widest mono">
-                <a href="privacy-policy.html" class="hover:text-cyan-glow transition" data-i18n="footer_privacy">Privacidad</a>
-                <a href="terms.html" class="hover:text-cyan-glow transition" data-i18n="footer_terms">Términos</a>
-            </div>
+    <!-- CTA FINAL -->
+    <section class="py-16 bg-ink text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <h2 class="font-heading text-3xl sm:text-4xl font-extrabold" data-i18n="cta_title">Probá la central de Turismo MKT en vivo antes de decidir</h2>
+            <p class="text-slate-300 max-w-2xl mx-auto" data-i18n="cta_sub">Escribinos por WhatsApp, probá la experiencia como si fueras un turista real y llevate un diagnóstico claro para tu próxima temporada o evento.</p>
+            <a href="https://wa.me/5491158432412?text=Hola%20Turismo%20MKT%2C%20quiero%20agendar%20mi%20Demo%20en%20vivo."
+                target="_blank" rel="noopener"
+                class="inline-flex items-center gap-2.5 bg-emerald-400 hover:bg-emerald-300 text-ink font-extrabold px-8 py-4 rounded-xl transition-all text-base shadow-lg">
+                <span data-i18n="cta_btn">Hablar por WhatsApp</span> →
+            </a>
+        </div>
+    </section>
 
-            <div class="text-slate-600 text-xs mono">
-                &copy; 2026 TMKT ALGOBOOST • Hospitality, Nightlife & Tourism Growth Engine
+    <!-- FOOTER -->
+    <footer class="bg-sandDark border-t border-ink/10 py-8 text-sm text-inkSoft">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="font-semibold text-ink">Turismo MKT · <span class="font-normal text-inkSoft" data-i18n="footer_desc">Especialistas en Conversión por WhatsApp para Turismo y Eventos</span></div>
+            <div class="flex items-center gap-5">
+                <a href="privacy-policy.html" class="hover:text-ink transition-colors" data-i18n="footer_priv">Privacidad</a>
+                <a href="terms.html" class="hover:text-ink transition-colors" data-i18n="footer_terms">Términos</a>
             </div>
         </div>
     </footer>
 
-    <!-- Translations & Simulator Script -->
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/5491158432412?text=Hola%20Turismo%20MKT%2C%20vengo%20de%20la%20web%20y%20quiero%20info."
+        target="_blank" rel="noopener" aria-label="WhatsApp Turismo MKT"
+        class="fixed bottom-5 right-5 z-50 bg-emerald-500 hover:bg-emerald-400 text-ink font-bold px-4 py-3 rounded-full shadow-xl flex items-center gap-2 text-sm transition-transform hover:scale-105">
+        <span>💬</span>
+        <span class="hidden sm:inline" data-i18n="float_wa">Demo WhatsApp</span>
+    </a>
+
     <script>
-        let currentLang = 'es';
-
-        // Simulator Logic (AlgoBoost Video Calculator)
-        function updateSimulator(val) {
-            const posts = parseInt(val);
-            const postWord = currentLang === 'pt' ? 'Vídeos / Posts por mês' : (currentLang === 'en' ? 'Videos / Posts per month' : 'Videos / Posts al mes');
-            const capDisplay = document.getElementById('capacity-display');
-            if (capDisplay) capDisplay.innerText = posts + ' ' + postWord;
-
-            const reachMin = Math.round(posts * 2200).toLocaleString();
-            const reachMax = Math.round(posts * 5500).toLocaleString();
-            const reachDisplay = document.getElementById('reach-display');
-            if (reachDisplay) reachDisplay.innerText = `${reachMin} - ${reachMax}`;
-
-            const comments = Math.round(posts * 12).toLocaleString() + '+';
-            const signalsDisplay = document.getElementById('signals-display');
-            if (signalsDisplay) signalsDisplay.innerText = comments;
-
-            const savings = "$" + Math.round(posts * 22).toLocaleString() + " USD";
-            const windowDisplay = document.getElementById('window-display');
-            if (windowDisplay) windowDisplay.innerText = savings;
-        }
-
-        const translations = {
+        const i18n = {
             es: {
-                nav_sub: "Hospitality, Nightlife & Tourism",
-                nav_benefits: "6 Beneficios",
-                nav_operation: "Fricción Cero",
-                nav_sectors: "Bares, Fiestas & Hoteles",
+                nav_sub: "Ecosistema de Reservas 360°",
+                nav_niches: "Nichos",
+                nav_method: "Cómo Funciona",
                 nav_plans: "Soluciones",
-                nav_simulator: "Proyección",
-                nav_cta: "Agendar Demo (15 min)",
-                hero_badge: "⚡ TMKT ALGOBOOST ENGINE // BARES, BOLICHES, HOTELES & EXPERIENCIAS",
-                hero_title_p1: "HACEMOS QUE TUS POSTS ROMPAN EL ALGORITMO",
-                hero_title_p2: "& LLENEN TU LOCAL DE CLIENTES",
-                hero_sub_start: "Inyección temprana de retención y comentarios contextuales reales en los primeros 15 minutos en Reels y TikTok.",
-                hero_sub_highlight: " Más visibilidad en tu ciudad, menor costo publicitario",
-                hero_sub_middle: "y",
-                hero_sub_end: "explosión de reservas con Cero Trabas Operativas.",
-                pill_1: "+ Boost Algorítmico & Alcance Local",
-                pill_2: "+ Prueba Social (Mesas, Entradas & Reservas)",
-                pill_3: "0 Herramientas (Fricción Cero)",
-                cta_hero_main: "Agendar Sesión en Vivo (15 min) + Prueba Gratuita",
-                cta_hero_sec: "Ver los 6 Beneficios",
-                cockpit_title: "TMKT ENGINE // MONITOR DE ACELERACIÓN EN VIVO",
-                cockpit_window_label: "Ventana de Inyección:",
-                cockpit_window_val: "Primeros 15 Minutos",
-                cockpit_left_tag: "❌ Publicación Convencional",
-                cockpit_left_badge: "Sin Impulso",
-                cockpit_left_title: "Algoritmo Estancado",
-                cockpit_left_desc: "Subís el video de la fiesta, plato o trago y queda planchado. Cero interacción, cero reservas.",
-                cockpit_m_views: "Reproducciones",
-                cockpit_m_likes: "Likes",
-                cockpit_m_comments: "Comentarios",
-                cockpit_left_warning: "⚠️ Resultado: Instagram frena la entrega a la hora. El local parece vacío y nadie se tienta a ir o reservar.",
-                cockpit_right_tag: "⚡ Con TMKT AlgoBoost",
-                cockpit_right_badge: "Dominando el Feed Local",
-                cockpit_right_title: "Ruptura Algorítmica & Demanda Activa",
-                cockpit_right_desc: "Retención forzada y aval social en los primeros 15 min. El algoritmo distribuye a toda la zona.",
-                cockpit_c1: "\"¿A qué hora abre la barra hoy? ¿Sigue la promo 2x1 en gin?\"",
-                cockpit_c2: "\"Hola! ¿Tienen mesa disponible para 6 personas este viernes?\"",
-                cockpit_c3: "\"Tremenda la fecha del sábado! Dónde se consiguen las anticipadas?\"",
-                ben_badge: "Impacto Comercial Garantizado",
-                ben_title: "Los 6 Beneficios de TMKT AlgoBoost",
-                ben_subtitle: "El algoritmo de Instagram y TikTok decide en los primeros 15 minutos si viraliza o sepulta una publicación. Diseñamos el motor que fuerza la concurrencia a tu negocio.",
-                ben_1_title: "+ Boost Algorítmico Inmediato",
-                ben_1_desc: "Inyección temprana de retención obligatoria en los primeros 15 a 20 minutos de subida. Le indicamos a las plataformas que el contenido es de alto interés para forzar su recomendación en Explorar y Para Ti.",
-                ben_1_tag: "Activación en Franja Crítica",
-                ben_2_title: "+ Visibilidad Masiva en tu Ciudad",
-                ben_2_desc: "Rompa para siempre el tope artificial de 200 vistas. Hacemos que la gente que está buscando salir a comer, tomar algo o viajar en su ciudad vea su propuesta en el momento exacto.",
-                ben_2_tag: "Alcance Local Multiplicado",
-                ben_3_title: "+ Prueba Social Contextual Humana",
-                ben_3_desc: "Comentarios contextuales reales adaptados a la gastronomía y turismo: consultas de cartas, mesas para grupos, horarios de barra, entradas para eventos y disponibilidad de estadía.",
-                ben_3_tag: "Interacción Humana Real",
-                ben_4_title: "+ Efecto \"Lugar Lleno\" & Deseo de Salir",
-                ben_4_desc: "El efecto multitud en acción: nadie va a un bar, restaurante o fiesta que parece desierto. Un perfil repleto de movimiento genera FOMO inmediato y deseo incontrolable de asistir.",
-                ben_4_tag: "Efecto Multitud & FOMO",
-                ben_5_title: "+ Conversión Directa a Reservas & WhatsApp",
-                ben_5_desc: "Cuando la gente ve comentarios de reservas en tus posteos, el comensal o turista no duda y hace clic directo a tu WhatsApp para asegurar su lugar antes de que se agote.",
-                ben_5_tag: "Tracción Directa a WhatsApp",
-                ben_6_title: "- Costo Publicitario en Anuncios (Menor CPA)",
-                ben_6_desc: "Si pautás publicidad local, hacerlo sobre posts que ya cuentan con prueba social y comentarios masivos reduce el costo por mensaje y por reserva hasta un 40%.",
-                ben_6_tag: "Ahorro Directo en Ads",
-                op_badge: "Simplicidad Radical",
-                op_title: "Operatoria Fricción Cero",
-                op_subtitle: "El dueño o encargado no quiere otra herramienta para aprender ni trabas operativas. TMKT AlgoBoost es un servicio 100% productizado y llave en mano.",
-                op_1_title: "0 Software ni Instalaciones",
-                op_1_desc: "No tenés que descargar aplicaciones, aprender paneles complicados ni entrenar al encargado o recepcionista. Cero trabajo extra para tu equipo.",
-                op_2_title: "0 Contraseñas ni Riesgo de Cuenta",
-                op_2_desc: "Nunca te pedimos contraseñas ni accesos a tus redes sociales. Es interacción externa 100% legítima con cero riesgo de penalizaciones o bloqueos.",
-                op_3_title: "Solo Envías el Link (O lo Extraemos)",
-                op_3_desc: "Vos solo publicás normal el video o reel. Nos mandás el link por WhatsApp (o nuestro sistema lo detecta automáticamente). Del despegue nos encargamos nosotros.",
-                sec_badge: "Impacto Especializado por Modelo",
-                sec_title: "Estrategia Adaptada a tu Nicho",
-                sec_subtitle: "Nuestra aceleración algorítmica se sincroniza quirúrgicamente con las franjas horarias y días de mayor decisión de salida.",
-                sec_gastro_tag: "GASTRONOMÍA // BARES, RESTAURANTES & CAFETERÍAS",
-                sec_gastro_title: "Bares, Restaurantes y Cervecerías",
-                sec_gastro_desc: "Llená los días difíciles (martes y miércoles), explotá los fines de semana y viralizá platos emblemáticos y promociones de tragos en toda tu zona de influencia.",
-                sec_gastro_p1: "Inyección en franjas previas a la cena y after office (18hs a 21hs).",
-                sec_gastro_p2: "Consultas masivas sobre menú, promos 2x1 y reserva de mesas para festejos.",
-                sec_gastro_p3: "Posicionamiento en la pestaña Explorar de clientes de tu misma ciudad.",
-                sec_gastro_obj: "Objetivo: Ocupación Máxima Semanal",
-                sec_gastro_ticket: "Alta Rotación de Mesas",
-                sec_night_tag: "NIGHTLIFE & TURISMO // DISCOTECAS, HOTELES & EVENTOS",
-                sec_night_title: "Boliches, Festivales, Hoteles & Escapadas",
-                sec_night_desc: "Agotá preventas de entradas, completá las reservas de mesas VIP y asegurá la ocupación de cabañas u hoteles para fines de semana largos y temporada.",
-                sec_night_p1: "Disparo algorítmico los días clave de compra de tickets (jueves y viernes).",
-                sec_night_p2: "Creación de efecto FOMO (Miedo a Quedarse Afuera) en público joven y turistas.",
-                sec_night_p3: "Atracción de viajeros de ciudades emisoras clave con alta capacidad de gasto.",
-                sec_night_obj: "Objetivo: Sold Out & Reservas Anticipadas",
-                sec_night_ticket: "Capacidad Completa",
-                plan_badge: "Soluciones Productizadas TMKT",
-                plan_title: "Planes Oficiales & Coberturas Especiales",
-                plan_subtitle: "Desde aceleración semanal para locales hasta cobertura integral de temporada y festivales masivos.",
-                plan_1_badge: "PLAN 01 // IMPULSO LOCAL",
-                plan_1_title: "Validación & Tracción",
-                plan_1_per: "USD / mes",
-                plan_1_desc: "Ideal para bares, cafeterías y restaurantes que publican 3 veces por semana y quieren salir del estancamiento.",
-                plan_1_f1: "12 publicaciones / mes (3x por semana)",
-                plan_1_f2: "Empuje algorítmico en primeros 20 min",
-                plan_1_f3: "Comentarios contextuales de reservas y cartas",
-                plan_1_f4: "Gestión directa por WhatsApp (Fricción Cero)",
-                plan_1_btn: "Elegir Plan Impulso ($57)",
-                plan_2_popular: "MÁS ELEGIDO // ALTO RENDIMIENTO",
-                plan_2_badge: "PLAN 02 // CRECIMIENTO NOCTURNO",
-                plan_2_title: "Exposición & Fines de Semana",
-                plan_2_per: "USD / mes",
-                plan_2_desc: "Para locales nocturnos, hoteles y boliches con ritmo constante que buscan llenar fechas y atraer público nuevo.",
-                plan_2_f1: "20 publicaciones / mes (5x por semana)",
-                plan_2_f2: "Todo lo del Plan 1 (Impulso 20 min)",
-                plan_2_f3: "Cobertura prioritaria en franjas nocturnas y findes",
-                plan_2_f4: "Difusión en cuentas satélite de turismo & salidas",
-                plan_2_btn: "Elegir Plan Crecimiento ($97)",
-                plan_3_badge: "PLAN 03 // DIARIO FULL",
-                plan_3_title: "Dominación Total de la Ciudad",
-                plan_3_per: "USD / mes",
-                plan_3_desc: "Para complejos turísticos, cadenas de bares y discotecas de primer nivel que publican a diario.",
-                plan_3_f1: "30 publicaciones / mes (1 post diario garantizado)",
-                plan_3_f2: "Máxima prioridad de inyección y retención",
-                plan_3_f3: "Replicación constante en red de cuentas satélites",
-                plan_3_f4: "Reporte mensual avanzado de impacto y alcance",
-                plan_3_btn: "Elegir Plan Diario ($127)",
-                event_badge: "🎉 COBERTURA ESPECIAL // FIESTAS, FESTIVALES & TEMPORADA ALTA",
-                event_title: "Campaña de Choque para Fechas Masivas & Sold Out",
-                event_desc: "Diseñado para eventos únicos, recitales, aperturas de temporada, fines de semana XXL o festivales. Inyectamos hiper-visibilidad y FOMO masivo en los días previos para detonar la preventa de entradas y agotar la capacidad antes del evento.",
-                event_f1: "Aceleración intensiva en preventa de tickets",
-                event_f2: "Inyección masiva de retención y comentarios de compra",
-                event_f3: "Amplificación en red de perfiles nocturnos y de turismo",
-                event_f4: "Reducción radical del costo por entrada vendida",
-                event_price_label: "Inversión Llave en Mano por Fecha",
-                event_per: "USD",
-                event_btn: "Consultar Cobertura para Evento",
-                event_subnote: "Cupos limitados por fecha para garantizar impacto",
-                sim_badge: "Calculadora de Retorno Algorítmico",
-                sim_title: "Proyectá el Impacto en tu Local o Evento",
-                sim_subtitle: "Ajustá la cantidad de videos o reels que publicás al mes para estimar el alcance local, las consultas de reservas y el ahorro en publicidad.",
-                sim_label: "Frecuencia Mensual de Publicación:",
-                sim_step_1: "4 (1 por semana)",
-                sim_step_2: "12 (3 por semana)",
-                sim_step_3: "20 (5 por semana)",
-                sim_step_4: "30 (1 diario)",
-                sim_out1_title: "Alcance Local Estimado",
-                sim_out1_sub: "Personas en tu ciudad",
-                sim_out2_title: "Prueba Social Inyectada",
-                sim_out2_sub: "Comentarios reales de clientes",
-                sim_out3_title: "Ahorro Estimado en Ads",
-                sim_out3_sub: "Ahorro por menor CPA",
-                sim_cta: "Probar AlgoBoost en mis Videos (Sesión 15 min)",
-                final_badge: "Demostración en Tiempo Real",
-                final_title: "Mirá Cómo Despega tu Último Post en 3 Minutos",
-                final_sub: "Coordinamos una sesión en vivo de 15 minutos (por videollamada o directo por WhatsApp). Auditamos tu cuenta, ejecutamos la prueba en tiempo real en la última publicación de tu local y ves los resultados en directo.",
-                cta_final: "Agendar Sesión de 15 min + Prueba en Vivo",
-                cta_subnote: "Sin contraseñas. Sin instalaciones. Cupos limitados por rubro y ciudad para garantizar exclusividad.",
-                footer_privacy: "Privacidad",
-                footer_terms: "Términos"
+                nav_addons: "Módulos",
+                nav_faq: "Preguntas",
+                nav_cta: "Solicitar Demo",
+                hero_badge: "Especialistas en Hotelería, Receptivos, Excursiones y Eventos",
+                hero_title: 'Convertimos todas tus consultas en <span class="font-editorial italic font-normal text-amber-300">reservas confirmadas.</span>',
+                hero_desc: "Dejá de pagar pauta para recibir curiosos que nunca compran. Conectamos cada venta real cerrada en tu WhatsApp directo al algoritmo de Meta Ads (CAPI + AlgoBoost) y automatizamos tu atención 24/7 por texto y voz en Español, Portugués e Inglés.",
+                hero_cta1: "Probar Demo en Vivo",
+                hero_cta2: "Ver Soluciones",
+                stat_1: "Comisión por reserva",
+                stat_2: "Atención 24/7 multiidioma",
+                stat_3: "Tracking real de conversiones",
+                card_tag: "Arquitectura Turismo MKT",
+                card_title: "Del primer clic a la reserva confirmada",
+                flow_s1_t: "Tráfico Segmentado (Meta Ads / Google)",
+                flow_s1_d: "Turistas por idioma, geolocalización, aeropuerto o evento directo a tu WhatsApp.",
+                flow_s2_t: "Atención 24/7 + Voz en Tiempo Real",
+                flow_s2_d: "Central omnicanal (WhatsApp, redes, web y llamadas) que cotiza al instante y hace seguimiento.",
+                flow_s3_t: "Confirmás la seña → Señal a Meta CAPI",
+                flow_s3_d: "Con un emoji ✅ o palabra clave, Meta recibe el valor exacto y optimiza para más compradores.",
+                why_1_t: "WhatsApp convierte más que una web fría",
+                why_1_d: "En turismo y eventos VIP, el viajero pregunta fechas, traslados, menores o formas de pago antes de transferir. Resolver esa duda en segundos multiplica el cierre.",
+                why_2_t: "Meta CAPI aprende quién te paga de verdad",
+                why_2_d: "Sin CAPI, Meta solo sabe quién hizo clic. Con nuestro puente, cada reserva cerrada en WhatsApp entrena al algoritmo con el monto real.",
+                why_3_t: "Sin cambiar tu número ni tu forma de trabajar",
+                why_3_d: "Conectás tu WhatsApp actual en 1 minuto por QR o código de 8 letras. Cero migraciones traumáticas y cero dependencias de terceros.",
+                niche_eyebrow: "100% Especializados",
+                niche_title: "Diseñado para tu rubro, no plantillas genéricas",
+                niche_sub: "Elegí tu tipo de operación para ver cómo captamos demanda y convertimos cada consulta en WhatsApp:",
+                tab_hotel: "🏨 Hoteles & Alojamientos",
+                tab_receptivo: "🚐 Receptivos & Agencias",
+                tab_excursion: "🏔️ Excursiones & Tours",
+                tab_evento: "🎟️ Eventos & Recitales",
+                niche_sim_label: "Ejemplo de flujo en WhatsApp",
+                sim_client: "Cliente (Meta Ads):",
+                sim_ai: "Turismo MKT (ES / PT / EN):",
+                eco_eyebrow: "Método Probado",
+                eco_title: "De principio a fin: captación, atención centralizada y cierre real",
+                step_1_t: "Pauta Inteligente + AlgoBoost",
+                step_1_d: "Segmentación por idioma del dispositivo, turistas en destino, aeropuertos y Lookalikes de compradores reales.",
+                step_2_t: "Recepción IA Texto & Voz",
+                step_2_d: "Responde mensajes y llamadas de WhatsApp en tiempo real en ES, PT o EN sin dejar enfriar al pasajero.",
+                step_3_t: "Kanban, Agenda & Follow-Up",
+                step_3_d: "Cada consulta queda ordenada por etapa y recibe seguimiento automático hasta confirmar la seña.",
+                step_4_t: "Meta CAPI Sin Fricción",
+                step_4_d: "Al confirmar la venta o reserva en WhatsApp, devolvemos el monto exacto a Meta Ads para bajar tu costo por cierre.",
+                plans_eyebrow: "Nuestras Soluciones",
+                plans_title: "Elegí el nivel de implementación para tu negocio",
+                plans_sub: "Implementación llave en mano adaptada al tamaño de tu hotel, agencia, operadora o productora.",
+                p1_badge: "ESENCIAL · TRÁFICO + TRACKING",
+                p1_title: "Plan Inicial: Meta CAPI + Campañas",
+                p1_desc: "Ideal si ya tenés quien responda tu WhatsApp y querés que tus campañas de Meta Ads optimicen por ventas reales.",
+                p1_f1: "Conexión directa de tu WhatsApp al Puente Meta CAPI (sin cambiar número).",
+                p1_f2: "Envío automático de conversiones reales con monto exacto (emoji ✅ o palabra clave).",
+                p1_f3: "Portal propio de auto-reconexión en 1 clic (QR o código de 8 letras).",
+                p1_f4: "Gestión completa de campañas en Meta Ads + AlgoBoost incluido.",
+                p1_cta: "Solicitar Diagnóstico Plan Inicial →",
+                p2_popular: "Más Elegido",
+                p2_badge: "LLAVE EN MANO · CENTRAL COMPLETA",
+                p2_title: "Ecosistema Turismo MKT 360°",
+                p2_desc: "Para hoteles, receptivos, excursiones y productoras que quieren cero consultas perdidas, atención 24/7 y control total.",
+                p2_f1: "Todo lo del Plan Inicial (Meta CAPI + Gestión de Campañas + AlgoBoost).",
+                p2_f2: "Recepcionista IA Multiidioma 24/7 en WhatsApp (Español, Portugués e Inglés).",
+                p2_f3: "Recepcionista IA por Voz en Tiempo Real para llamadas entrantes de WhatsApp.",
+                p2_f4: "CRM Kanban de reservas + Agenda automática + Follow-Up de cotizaciones.",
+                p2_f5: "Capacitación a tu equipo y asistencia 24/7.",
+                p2_cta: "Probar Demo 360° y Cotizar →",
+                mod_eyebrow: "Módulos Adicionales",
+                mod_title: "Potenciá tu ecosistema según lo que necesite tu plaza",
+                m1_t: "Google Ads Alta Intención",
+                m1_d: "Capturá viajeros que ya están buscando reservar hotel, excursión o entradas hoy, derivando todo a tu embudo de WhatsApp.",
+                m2_t: "Motor Reseñas Google Maps",
+                m2_d: "Encuesta automática post-estadía por WhatsApp: clientes felices van directo a Google Maps; quejas llegan en privado al dueño.",
+                m3_t: "Creatividades & Viralidad",
+                m3_d: "Producción de Reels y anuncios basados en formatos validados del sector turístico para bajar costos desde el día uno.",
+                m4_t: "Contact Center & Telefonía SIP",
+                m4_d: "Central multi-agente con líneas WhatsApp + telefonía fija IP (PABX/SIP) y grabación de llamadas para equipos grandes.",
+                faq_title: "Preguntas Frecuentes",
+                faq_q1: "¿Qué canales centraliza Turismo MKT y cómo funciona la atención 24/7?",
+                faq_a1: "Unificamos tus consultas de WhatsApp, Instagram, Messenger, formulario web y llamadas en una sola central omnicanal. Nuestra IA atiende al instante en Español, Portugués e Inglés, organiza cada lead en tu CRM Kanban y agenda reuniones o reservas automáticamente.",
+                faq_q2: "¿Cómo funciona la Recepcionista IA por Voz para llamadas y telefonía?",
+                faq_a2: "Atiende llamadas entrantes en tiempo real con voz natural, responde sobre disponibilidad, tarifas y servicios, agenda citas o reservas y deja el audio grabado junto con el resumen dentro del chat. También puede conectarse a centrales telefónicas IP (SIP / PABX).",
+                faq_q3: "¿Cómo logran que Meta Ads y Google Ads traigan compradores reales y no curiosos?",
+                faq_a3: "Combinamos segmentación turística (idioma del dispositivo, aeropuertos, viajeros en destino) + AlgoBoost + Meta Conversions API (CAPI). Cada vez que confirmás una reserva o entrada, enviamos el valor exacto al algoritmo para que busque perfiles similares que sí pagan.",
+                faq_q4: "¿Tengo que cambiar mis números actuales o perder mi historial?",
+                faq_a4: "No. Conectamos tus líneas actuales de WhatsApp Business (por QR o código de 8 letras) y tus cuentas publicitarias en minutos sin perder conversaciones, contactos ni tu número comercial.",
+                faq_q5: "¿Cómo se implementa y por qué no publican precios fijos en la web?",
+                faq_a5: "Entregamos el ecosistema llave en mano adaptado al volumen de consultas, cantidad de puestos, idiomas y módulos que necesite tu hotel, receptivo, operadora o productora. En una demo en vivo de 15 minutos armamos tu propuesta exacta.",
+                
+                cta_title: "Probá la central de Turismo MKT en vivo antes de decidir",
+                cta_sub: "Escribinos por WhatsApp, probá la experiencia como si fueras un turista real y llevate un diagnóstico claro para tu próxima temporada o evento.",
+                cta_btn: "Hablar por WhatsApp",
+                footer_desc: "Especialistas en Conversión por WhatsApp para Turismo y Eventos",
+                footer_priv: "Privacidad",
+                footer_terms: "Términos",
+                float_wa: "Demo WhatsApp"
             },
             pt: {
-                nav_sub: "Hospitality, Nightlife & Tourism",
-                nav_benefits: "6 Benefícios",
-                nav_operation: "Fricção Zero",
-                nav_sectors: "Bares, Baladas & Hotéis",
+                nav_sub: "Ecossistema de Reservas 360°",
+                nav_niches: "Nichos",
+                nav_method: "Como Funciona",
                 nav_plans: "Soluções",
-                nav_simulator: "Projeção",
-                nav_cta: "Agendar Demo (15 min)",
-                hero_badge: "⚡ TMKT ALGOBOOST ENGINE // BARES, BALADAS, HOTÉIS & EXPERIÊNCIAS",
-                hero_title_p1: "FAZEMOS SEUS POSTS QUEBRAREM O ALGORITMO",
-                hero_title_p2: "& LOTAREM SEU LOCAL DE CLIENTES",
-                hero_sub_start: "Injeção inicial de retenção e comentários contextualizados nos primeiros 15 minutos no Reels e TikTok.",
-                hero_sub_highlight: " Mais visibilidade na sua cidade, menor custo em anúncios",
-                hero_sub_middle: "e",
-                hero_sub_end: "explosão de reservas com Zero Atrito Operacional.",
-                pill_1: "+ Boost Algorítmico & Alcance Local",
-                pill_2: "+ Prova Social (Mesas, Ingressos & Reservas)",
-                pill_3: "0 Ferramentas (Fricção Zero)",
-                cta_hero_main: "Agendar Sessão ao Vivo (15 min) + Teste Gratuito",
-                cta_hero_sec: "Ver os 6 Benefícios",
-                cockpit_title: "TMKT ENGINE // MONITOR DE ACELERAÇÃO AO VIVO",
-                cockpit_window_label: "Janela de Injeção:",
-                cockpit_window_val: "Primeiros 15 Minutos",
-                cockpit_left_tag: "❌ Publicação Convencional",
-                cockpit_left_badge: "Sem Impulso",
-                cockpit_left_title: "Algoritmo Estagnado",
-                cockpit_left_desc: "Você posta o vídeo da festa, prato ou drink e ele não anda. Zero interação, zero reservas.",
-                cockpit_m_views: "Visualizações",
-                cockpit_m_likes: "Curtidas",
-                cockpit_m_comments: "Comentários",
-                cockpit_left_warning: "⚠️ Resultado: O Instagram corta o alcance em 1 hora. O local parece vazio e ninguém se anima a ir.",
-                cockpit_right_tag: "⚡ Com TMKT AlgoBoost",
-                cockpit_right_badge: "Dominando o Feed Local",
-                cockpit_right_title: "Ruptura Algorítmica & Demanda Ativa",
-                cockpit_right_desc: "Retenção forçada e prova social nos primeiros 15 min. O algoritmo distribui para toda a sua cidade.",
-                cockpit_c1: "\"Que horas abre o bar hoje? Ainda tá rolando o double gin?\"",
-                cockpit_c2: "\"Olá! Têm mesa disponível para 6 pessoas nesta sexta-feira?\"",
-                cockpit_c3: "\"Top demais a festa de sábado! Onde compro os ingressos antecipados?\"",
-                ben_badge: "Impacto Comercial Garantido",
-                ben_title: "Os 6 Benefícios do TMKT AlgoBoost",
-                ben_subtitle: "O algoritmo decide nos primeiros 15 minutos se entrega ou oculta seu vídeo. Forçamos a recomendação para lotar seu negócio.",
-                ben_1_title: "+ Boost Algorítmico Imediato",
-                ben_1_desc: "Injeção de retenção nos primeiros 15 a 20 minutos para acionar recomendação direta no Explorar e Para Você.",
-                ben_1_tag: "Ativação em Janela Crítica",
-                ben_2_title: "+ Visibilidade Massiva na sua Cidade",
-                ben_2_desc: "Supere o teto de 200 visualizações e alcance quem está procurando onde comer, beber ou viajar na sua região.",
-                ben_2_tag: "Alcance Local Multiplicado",
-                ben_3_title: "+ Prova Social Contextual Humana",
-                ben_3_desc: "Comentários reais sobre cardápio, reserva de mesas para grupos, ingressos para eventos e vagas em pousadas.",
-                ben_3_tag: "Interação Humana Real",
-                ben_4_title: "+ Efeito \"Lugar Cheio\" & Desejo de Sair",
-                ben_4_desc: "Efeito multidão: ninguém vai a um bar ou balada que parece vazio. Um perfil ativo gera FOMO e atração imediata.",
-                ben_4_tag: "Efeito Multidão & FOMO",
-                ben_5_title: "+ Conversão Direta para Reservas & WhatsApp",
-                ben_5_desc: "Comentários públicos de clientes desarmam a dúvida: o público clica direto no seu WhatsApp para garantir presença.",
-                ben_5_tag: "Tração Direta para WhatsApp",
-                ben_6_title: "- Custo com Anúncios (Menor CPA)",
-                ben_6_desc: "Anunciar sobre postagens locais que já possuem forte engajamento reduz o custo por reserva em até 40%.",
-                ben_6_tag: "Economia Real em Tráfego",
-                op_badge: "Simplicidade Radical",
-                op_title: "Operação Fricção Zero",
-                op_subtitle: "Sem painéis ou cursos. TMKT AlgoBoost é 100% pronto para uso.",
-                op_1_title: "0 Softwares ou Instalações",
-                op_1_desc: "Nada para baixar ou aprender. Zero trabalho extra para os funcionários do seu estabelecimento.",
-                op_2_title: "0 Senhas ou Riscos de Conta",
-                op_2_desc: "Nunca pedimos dados de acesso. Interação externa e 100% segura contra punições.",
-                op_3_title: "Apenas Envie o Link (Ou Extraímos)",
-                op_3_desc: "Você publica o vídeo normalmente e envia o link (ou detectamos automaticamente). Nós cuidamos do impulso.",
-                sec_badge: "Impacto por Segmento",
-                sec_title: "Estratégia Adaptada ao seu Nicho",
-                sec_subtitle: "Aceleração algorítmica sincronizada com os horários de maior decisão de saída e viagens.",
-                sec_gastro_tag: "GASTRONOMIA // BARES, RESTAURANTES & CAFÉS",
-                sec_gastro_title: "Bares, Restaurantes e Cervejarias",
-                sec_gastro_desc: "Lote os dias de semana fracos, maximize os finais de semana e viralize pratos e drinks na sua cidade.",
-                sec_gastro_p1: "Injeção antes dos horários de pico e happy hour (18h às 21h).",
-                sec_gastro_p2: "Consultas de cardápio, combos e reservas de comemorações.",
-                sec_gastro_p3: "Destaque no Explorar de clientes da mesma cidade.",
-                sec_gastro_obj: "Objetivo: Ocupação Máxima Semanal",
-                sec_gastro_ticket: "Alta Rotatividade de Mesas",
-                sec_night_tag: "NIGHTLIFE & TURISMO // BALADAS, HOTÉIS & EVENTOS",
-                sec_night_title: "Baladas, Festivais, Hotéis & Pousadas",
-                sec_night_desc: "Esgote ingressos antecipados, feche camarotes VIP e garanta lotação para feriados e alta temporada.",
-                sec_night_p1: "Disparo algorítmico nos dias cruciais de compra (quintas e sextas).",
-                sec_night_p2: "Geração de FOMO coletivo para jovens e turistas.",
-                sec_night_p3: "Atração de viajantes de polos emissores com alta renda.",
-                sec_night_obj: "Objetivo: Sold Out & Reservas Antecipadas",
-                sec_night_ticket: "Capacidade Completa",
-                plan_badge: "Soluções TMKT",
-                plan_title: "Planos Oficiais & Coberturas Especiais",
-                plan_subtitle: "Do impulso semanal para bares à cobertura de grandes festivais e temporadas.",
-                plan_1_badge: "PLANO 01 // IMPULSO LOCAL",
-                plan_1_title: "Validação & Tração",
-                plan_1_per: "USD / mês",
-                plan_1_desc: "Ideal para bares, cafeterias e restaurantes que postam 3 vezes por semana e querem sair da estagnação.",
-                plan_1_f1: "12 postagens / mês (3x por semana)",
-                plan_1_f2: "Impulso algorítmico nos primeiros 20 min",
-                plan_1_f3: "Comentários contextuais de reservas e cardápio",
-                plan_1_f4: "Gestão direta pelo WhatsApp (Fricção Zero)",
-                plan_1_btn: "Escolher Plano Impulso ($57)",
-                plan_2_popular: "MAIS ESCOLHIDO // ALTA PERFORMANCE",
-                plan_2_badge: "PLANO 02 // CRESCIMENTO NOTURNO",
-                plan_2_title: "Exposição & Finais de Semana",
-                plan_2_per: "USD / mês",
-                plan_2_desc: "Para baladas, hotéis e bares com fluxo constante que buscam lotar eventos e atrair público novo.",
-                plan_2_f1: "20 postagens / mês (5x por semana)",
-                plan_2_f2: "Tudo do Plano 1 (Impulso 20 min)",
-                plan_2_f3: "Cobertura prioritária em horários noturnos e fins de semana",
-                plan_2_f4: "Divulgação em rede de contas de turismo e lazer",
-                plan_2_btn: "Escolher Plano Crescimento ($97)",
-                plan_3_badge: "PLANO 03 // DIÁRIO FULL",
-                plan_3_title: "Dominação Total da Cidade",
-                plan_3_per: "USD / mês",
-                plan_3_desc: "Para complexos turísticos, redes de gastronomia e grandes baladas que postam diariamente.",
-                plan_3_f1: "30 postagens / mês (1 post diário garantido)",
-                plan_3_f2: "Prioridade máxima de injeção e retenção",
-                plan_3_f3: "Replicação contínua em rede de contas satélites",
-                plan_3_f4: "Relatório mensal avançado de impacto e alcance",
-                plan_3_btn: "Escolher Plano Diário ($127)",
-                event_badge: "🎉 COBERTURA ESPECIAL // FESTAS, FESTIVAIS & ALTA TEMPORADA",
-                event_title: "Campanha de Choque para Eventos & Sold Out",
-                event_desc: "Criado para eventos únicos, shows, abertura de temporada, feriados prolongados ou festivais. Injetamos hipervisibilidade e FOMO massivo nos dias prévios para explodir a pré-venda e esgotar os ingressos antes da data.",
-                event_f1: "Aceleração intensiva na pré-venda de ingressos",
-                event_f2: "Injeção massiva de retenção e comentários de compra",
-                event_f3: "Amplificação em rede de perfis de turismo e eventos",
-                event_f4: "Redução radical do custo por ingresso vendido",
-                event_price_label: "Investimento Chave na Mão por Evento",
-                event_per: "USD",
-                event_btn: "Consultar Cobertura para Evento",
-                event_subnote: "Vagas limitadas por data para garantir exclusividade",
-                sim_badge: "Calculadora de Retorno Algorítmico",
-                sim_title: "Projete o Impacto no seu Local ou Evento",
-                sim_subtitle: "Ajuste o número de vídeos publicados por mês para projetar alcance local, reservas e economia em anúncios.",
-                sim_label: "Frequência Mensal de Publicação:",
-                sim_step_1: "4 (1 por semana)",
-                sim_step_2: "12 (3 por semana)",
-                sim_step_3: "20 (5 por semana)",
-                sim_step_4: "30 (1 diário)",
-                sim_out1_title: "Alcance Local Estimado",
-                sim_out1_sub: "Pessoas na sua cidade",
-                sim_out2_title: "Prova Social Injetada",
-                sim_out2_sub: "Comentários reais de clientes",
-                sim_out3_title: "Economia Estimada em Ads",
-                sim_out3_sub: "Economia por menor CPA",
-                sim_cta: "Testar AlgoBoost nos meus Vídeos (Sessão 15 min)",
-                final_badge: "Demonstração em Tempo Real",
-                final_title: "Veja seu Último Post Decolar em 3 Minutos",
-                final_sub: "Coordenamos uma sessão ao vivo de 15 minutos (por chamada de vídeo ou direto pelo WhatsApp). Auditamos seu perfil, testamos no seu último post e mostramos o resultado ao vivo.",
-                cta_final: "Agendar Sessão de 15 min + Teste ao Vivo",
-                cta_subnote: "Sem senhas. Sem instalações. Vagas limitadas por cidade e nicho.",
-                footer_privacy: "Privacidade",
-                footer_terms: "Termos"
+                nav_addons: "Módulos",
+                nav_faq: "Dúvidas",
+                nav_cta: "Solicitar Demo",
+                hero_badge: "Especialistas em Hotelaria, Receptivos, Passeios e Eventos",
+                hero_title: 'Convertemos todas as suas consultas em <span class="font-editorial italic font-normal text-amber-300">reservas confirmadas.</span>',
+                hero_desc: "Pare de pagar anúncios para curiosos que nunca compram. Conectamos cada venda fechada no seu WhatsApp direto ao algoritmo do Meta Ads (CAPI + AlgoBoost) e automatizamos seu atendimento 24/7 por texto e voz em Português, Espanhol e Inglês.",
+                hero_cta1: "Testar Demo ao Vivo",
+                hero_cta2: "Ver Soluções",
+                stat_1: "Comissão por reserva",
+                stat_2: "Atendimento 24/7 multilíngue",
+                stat_3: "Tracking real de convers?es",
+                card_tag: "Arquitetura Turismo MKT",
+                card_title: "Do anúncio ao fechamento no WhatsApp",
+                flow_s1_t: "Tráfego Segmentado (Meta Ads / Google)",
+                flow_s1_d: "Turistas por idioma do aparelho, geolocalização, aeroporto ou evento direto no seu WhatsApp.",
+                flow_s2_t: "Atendimento 24/7 + Voz em Tempo Real",
+                flow_s2_d: "Orça datas, hóspedes ou ingressos em segundos e recupera contatos sem resposta.",
+                flow_s3_t: "Confirmou o sinal → Sinal para Meta CAPI",
+                flow_s3_d: "Com um emoji ✅ ou palavra-chave, a Meta recebe o valor exato e otimiza para mais compradores.",
+                why_1_t: "WhatsApp converte mais que um site frio",
+                why_1_d: "Em turismo e eventos VIP, o viajante pergunta datas, transfers, crianças ou pagamento antes de transferir. Responder em segundos multiplica o fechamento.",
+                why_2_t: "Meta CAPI aprende quem realmente paga",
+                why_2_d: "Sem CAPI, a Meta só vê quem clicou. Com nossa ponte, cada reserva fechada no WhatsApp treina o algoritmo com o valor real.",
+                why_3_t: "Sem trocar seu número nem sua rotina",
+                why_3_d: "Conecte seu WhatsApp atual em 1 minuto por QR ou código de 8 letras. Zero migrações difíceis.",
+                niche_eyebrow: "100% Especializados",
+                niche_title: "Feito para o seu segmento, sem modelos genéricos",
+                niche_sub: "Escolha sua operação para ver como captamos demanda e convertemos no WhatsApp:",
+                tab_hotel: "🏨 Hotéis & Pousadas",
+                tab_receptivo: "🚐 Receptivos & Agências",
+                tab_excursion: "🏔️ Passeios & Tours",
+                tab_evento: "🎟️ Eventos & Shows",
+                niche_sim_label: "Exemplo de fluxo no WhatsApp",
+                sim_client: "Cliente (Meta Ads):",
+                sim_ai: "Turismo MKT (PT / ES / EN):",
+                eco_eyebrow: "Método Validado",
+                eco_title: "Do início ao fim: tudo converge no seu WhatsApp",
+                step_1_t: "Tráfego Inteligente + AlgoBoost",
+                step_1_d: "Segmentação por idioma do celular, turistas no destino, aeroportos e Lookalikes de compradores reais.",
+                step_2_t: "Recepção IA Texto & Voz",
+                step_2_d: "Atende mensagens e chamadas do WhatsApp em tempo real em PT, ES ou EN sem deixar o cliente esfriar.",
+                step_3_t: "Kanban, Agenda & Follow-Up",
+                step_3_d: "Cada consulta fica organizada por etapa e recebe acompanhamento automático até confirmar o pagamento.",
+                step_4_t: "Meta CAPI Sem Fricção",
+                step_4_d: "Ao confirmar a reserva no WhatsApp, enviamos o valor exato para o Meta Ads reduzir seu custo por venda.",
+                plans_eyebrow: "Nossas Soluções",
+                plans_title: "Escolha o nível de implementação para o seu negócio",
+                plans_sub: "Entrega chave na mão adaptada ao porte do seu hotel, agência, operadora ou produtora.",
+                p1_badge: "ESSENCIAL · TRÁFEGO + TRACKING",
+                p1_title: "Plano Inicial: Meta CAPI + Campanhas",
+                p1_desc: "Ideal se você já tem equipe atendendo no WhatsApp e quer que o Meta Ads otimize por vendas reais.",
+                p1_f1: "Conexão direta do seu WhatsApp à Ponte Meta CAPI (sem trocar número).",
+                p1_f2: "Envio automático de conversões reais com valor exato (emoji ✅ ou palavra-chave).",
+                p1_f3: "Portal próprio de auto-reconexão em 1 clique (QR ou código de 8 letras).",
+                p1_f4: "Gestão completa de campanhas Meta Ads + AlgoBoost incluído.",
+                p1_cta: "Solicitar Diagnóstico Plano Inicial →",
+                p2_popular: "Mais Escolhido",
+                p2_badge: "CHAVE NA MÃO · CENTRAL COMPLETA",
+                p2_title: "Ecossistema Turismo MKT 360°",
+                p2_desc: "Para hotéis, receptivos, passeios e produtoras que querem zero leads perdidos, atendimento 24/7 e controle total.",
+                p2_f1: "Tudo do Plano Inicial (Meta CAPI + Gestão de Campanhas + AlgoBoost).",
+                p2_f2: "Recepcionista IA Multilíngue 24/7 no WhatsApp (Português, Espanhol e Inglês).",
+                p2_f3: "Recepcionista IA por Voz em Tempo Real para chamadas no WhatsApp.",
+                p2_f4: "CRM Kanban de reservas + Agenda automática + Follow-Up de cotações.",
+                p2_f5: "Treinamento da equipe e suporte 24/7.",
+                p2_cta: "Testar Demo 360° e Cotar →",
+                mod_eyebrow: "Módulos Adicionais",
+                mod_title: "Expanda seu ecossistema conforme a necessidade",
+                m1_t: "Google Ads Alta Intenção",
+                m1_d: "Capture viajantes que já estão buscando reservar hotel, passeio ou ingresso hoje, levando tudo para o WhatsApp.",
+                m2_t: "Motor de Avaliações Google Maps",
+                m2_d: "Pesquisa automática pós-estadia no WhatsApp: clientes felizes vão ao Google Maps; críticas chegam no privado.",
+                m3_t: "Criativos & Viralidade",
+                m3_d: "Produção de Reels e anúncios com formatos validados do setor turístico para baixar custos desde o primeiro dia.",
+                m4_t: "Contact Center & Telefonia SIP",
+                m4_d: "Central multi-atendente com WhatsApp + telefonia fixa IP (PABX/SIP) e gravação de chamadas.",
+                faq_title: "Perguntas Frequentes",
+                faq_q1: "Quais canais a Turismo MKT centraliza e como funciona o atendimento 24/7?",
+                faq_a1: "Unificamos WhatsApp, Instagram, Messenger, site e chamadas em uma única central omnichannel. Nossa IA atende na hora em Português, Espanhol e Inglês, organiza tudo no CRM Kanban e agenda reservas automaticamente.",
+                faq_q2: "Como funciona a Recepcionista IA por Voz para chamadas e telefonia?",
+                faq_a2: "Atende chamadas recebidas em tempo real com voz natural, informa disponibilidade e tarifas, agenda reservas e salva o áudio gravado com resumo no chat. Também integra com centrais IP (SIP / PABX).",
+                faq_q3: "Como vocês fazem o Meta Ads e Google Ads trazerem compradores reais?",
+                faq_a3: "Combinamos segmentação turística (idioma do aparelho, aeroportos, viajantes no destino) + AlgoBoost + Meta CAPI enviando o valor exato de cada venda fechada ao algoritmo.",
+                faq_q4: "Preciso trocar meus números atuais ou perder meu histórico?",
+                faq_a4: "Não. Conectamos seu WhatsApp Business atual (por QR ou código de 8 letras) e suas contas de anúncios em minutos sem perder conversas nem contatos.",
+                faq_q5: "Como é a implementação e por que não há preços fixos no site?",
+                faq_a5: "Entregamos o ecossistema chave na mão sob medida para o volume de leads, equipe, idiomas e módulos do seu hotel, agência ou produtora.",
+                
+                cta_title: "Teste a central Turismo MKT ao vivo antes de decidir",
+                cta_sub: "Chame no WhatsApp, experimente como um turista real e receba um diagnóstico claro para a próxima temporada.",
+                cta_btn: "Falar no WhatsApp",
+                footer_desc: "Especialistas em Conversão por WhatsApp para Turismo e Eventos",
+                footer_priv: "Privacidade",
+                footer_terms: "Termos",
+                float_wa: "Demo WhatsApp"
             },
             en: {
-                nav_sub: "Hospitality, Nightlife & Tourism",
-                nav_benefits: "6 Benefits",
-                nav_operation: "Zero Friction",
-                nav_sectors: "Bars, Clubs & Hotels",
+                nav_sub: "Ecosistema de Reservas 360°",
+                nav_niches: "Niches",
+                nav_method: "How It Works",
                 nav_plans: "Solutions",
-                nav_simulator: "Projection",
-                nav_cta: "Book Demo (15 min)",
-                hero_badge: "⚡ TMKT ALGOBOOST ENGINE // BARS, NIGHTCLUBS, HOTELS & EXPERIENCES",
-                hero_title_p1: "WE MAKE YOUR POSTS BREAK THE ALGORITHM",
-                hero_title_p2: "& FILL YOUR VENUE WITH CUSTOMERS",
-                hero_sub_start: "Early injection of watch time and authentic customer comments in the crucial first 15 minutes of Reels & TikTok.",
-                hero_sub_highlight: " Higher local city visibility, lower ad costs",
-                hero_sub_middle: "and",
-                hero_sub_end: "a surge of direct reservations with Zero Operational Friction.",
-                pill_1: "+ Algorithmic Boost & Local Reach",
-                pill_2: "+ Social Proof (Tables, Tickets & Booking)",
-                pill_3: "0 Tools (Zero Friction)",
-                cta_hero_main: "Book 15-Min Live Session + Free Test",
-                cta_hero_sec: "Explore the 6 Benefits",
-                cockpit_title: "TMKT ENGINE // LIVE ACCELERATION MONITOR",
-                cockpit_window_label: "Injection Window:",
-                cockpit_window_val: "First 15 Minutes",
-                cockpit_left_tag: "❌ Conventional Post",
-                cockpit_left_badge: "No Boost",
-                cockpit_left_title: "Stagnant Algorithm",
-                cockpit_left_desc: "You post a video of the party, dish, or drink and it stalls. Zero engagement, zero reservations.",
-                cockpit_m_views: "Views",
-                cockpit_m_likes: "Likes",
-                cockpit_m_comments: "Comments",
-                cockpit_left_warning: "⚠️ Outcome: Instagram chokes delivery within an hour. The venue looks empty and nobody is motivated to visit.",
-                cockpit_right_tag: "⚡ With TMKT AlgoBoost",
-                cockpit_right_badge: "Dominating Local Feed",
-                cockpit_right_title: "Active Algorithmic Breakout & Demand",
-                cockpit_right_desc: "Forced watch-time retention and social proof in the first 15 min. The algorithm blasts it across your city.",
-                cockpit_c1: "\"What time does the bar open today? Is the 2-for-1 gin special still on?\"",
-                cockpit_c2: "\"Hi! Do you have a table available for 6 this Friday?\"",
-                cockpit_c3: "\"Saturday lineup looks incredible! Where can we buy advance tickets?\"",
-                ben_badge: "Guaranteed Commercial Impact",
-                ben_title: "The 6 Core Benefits of TMKT AlgoBoost",
-                ben_subtitle: "Algorithms decide whether to promote or bury your post within 15 minutes. We engineer the breakout to pack your venue.",
-                ben_1_title: "+ Immediate Algorithmic Boost",
-                ben_1_desc: "Critical window engagement injection in the first 15-20 minutes pushing your reels to Explore and For You local feeds.",
-                ben_1_tag: "Critical Window Trigger",
-                ben_2_title: "+ Massive Local City Visibility",
-                ben_2_desc: "Permanently break the 200-view ceiling and capture people actively deciding where to eat, drink, or travel in your city.",
-                ben_2_tag: "Multiplied Local Reach",
-                ben_3_title: "+ Contextual Human Social Proof",
-                ben_3_desc: "Real comments asking about menus, table bookings for groups, happy hour schedules, VIP tables, and room availability.",
-                ben_3_tag: "Genuine Human Engagement",
-                ben_4_title: "+ Packed Venue Effect & FOMO",
-                ben_4_desc: "The crowd effect: nobody visits an empty bar or club. An active, buzzing profile creates instant FOMO and desire to attend.",
-                ben_4_tag: "Crowd Effect & FOMO",
-                ben_5_title: "+ Direct Conversion to Bookings & WhatsApp",
-                ben_5_desc: "Visible buying interest eliminates hesitation, driving prospective diners and clubbers straight to your WhatsApp booking desk.",
-                ben_5_tag: "Direct WhatsApp Traffic",
-                ben_6_title: "- Lower Ad Spend (Lower CPA)",
-                ben_6_desc: "Running local ads behind posts already loaded with genuine social proof reduces cost per inquiry by up to 40%.",
-                ben_6_tag: "Direct Ad Spend Savings",
-                op_badge: "Radical Simplicity",
-                op_title: "Zero Operational Friction",
-                op_subtitle: "No complex software or dashboards. TMKT AlgoBoost is a 100% productized turnkey service.",
-                op_1_title: "0 Software or Setups",
-                op_1_desc: "Nothing to download, learn, or manage. Zero extra overhead for your host or reception staff.",
-                op_2_title: "0 Passwords or Account Risk",
-                op_2_desc: "We never ask for account credentials. 100% external legitimate interaction with zero penalty risk.",
-                op_3_title: "Just Send the Link (Or We Auto-Extract)",
-                op_3_desc: "Post normally and WhatsApp us the link (or our system auto-detects it). We take care of the breakout.",
-                sec_badge: "Specialized Strategy by Model",
-                sec_title: "Tailored to Your Hospitality Model",
-                sec_subtitle: "Algorithmic momentum synced to the exact peak decision hours for going out and weekend trips.",
-                sec_gastro_tag: "GASTRONOMY // BARS, RESTAURANTS & CAFES",
-                sec_gastro_title: "Bars, Restaurants & Pubs",
-                sec_gastro_desc: "Fill slow weekday shifts, dominate weekends, and make your signature dishes and cocktails go viral locally.",
-                sec_gastro_p1: "Pre-dinner and after-office injection windows (6 PM to 9 PM).",
-                sec_gastro_p2: "Inquiries regarding group tables, menus, and celebration bookings.",
-                sec_gastro_p3: "Dominant Explore feed placement in your city.",
-                sec_gastro_obj: "Objective: Peak Weekly Occupancy",
-                sec_gastro_ticket: "High Table Turnover",
-                sec_night_tag: "NIGHTLIFE & TOURISM // CLUBS, HOTELS & EVENTS",
-                sec_night_title: "Nightclubs, Festivals & Boutique Hotels",
-                sec_night_desc: "Sell out advance tickets, book all VIP tables, and secure full resort occupancy for holiday weekends.",
-                sec_night_p1: "Algorithmic surges on key ticket-buying days (Thursdays and Fridays).",
-                sec_night_p2: "Massive FOMO generation for partygoers and tourists.",
-                sec_night_p3: "Attracting high-spending travelers from major feeder cities.",
-                sec_night_obj: "Objective: Sold Out & Advance Bookings",
-                sec_night_ticket: "Full Venue Capacity",
-                plan_badge: "TMKT Solutions",
-                plan_title: "Official Plans & Special Event Coverage",
-                plan_subtitle: "From weekly local restaurant momentum to full festival and peak season coverage.",
-                plan_1_badge: "PLAN 01 // LOCAL BOOST",
-                plan_1_title: "Validation & Traction",
-                plan_1_per: "USD / month",
-                plan_1_desc: "Ideal for bars, cafes, and restaurants posting 3 times a week looking to break out of stagnation.",
-                plan_1_f1: "12 posts / month (3x per week)",
-                plan_1_f2: "Algorithmic boost within the first 20 min",
-                plan_1_f3: "Contextual comments for reservations and menus",
-                plan_1_f4: "Direct WhatsApp operation (Zero Friction)",
-                plan_1_btn: "Choose Boost Plan ($57)",
-                plan_2_popular: "MOST POPULAR // HIGH PERFORMANCE",
-                plan_2_badge: "PLAN 02 // NIGHTLIFE GROWTH",
-                plan_2_title: "Exposure & Weekends",
-                plan_2_per: "USD / month",
-                plan_2_desc: "For nightclubs, hotels, and vibrant venues seeking packed dates and new local patrons.",
-                plan_2_f1: "20 posts / month (5x per week)",
-                plan_2_f2: "Everything in Plan 1 (20-min boost)",
-                plan_2_f3: "Priority coverage during nightlife and weekend slots",
-                plan_2_f4: "Amplification across tourism & nightlife networks",
-                plan_2_btn: "Choose Growth Plan ($97)",
-                plan_3_badge: "PLAN 03 // DAILY FULL",
-                plan_3_title: "Complete City Domination",
-                plan_3_per: "USD / month",
-                plan_3_desc: "For resort complexes, hospitality chains, and premier clubs posting every day.",
-                plan_3_f1: "30 posts / month (1 guaranteed daily post)",
-                plan_3_f2: "Top priority watch-time & retention injection",
-                plan_3_f3: "Continuous replication across satellite accounts",
-                plan_3_f4: "Advanced monthly impact and reach analytics",
-                plan_3_btn: "Choose Daily Plan ($127)",
-                event_badge: "🎉 SPECIAL COVERAGE // PARTIES, FESTIVALS & PEAK SEASON",
-                event_title: "Surge Campaign for Major Dates & Sold Out",
-                event_desc: "Engineered for one-off events, concerts, season kickoffs, holiday weekends, or festivals. We inject hyper-visibility and massive FOMO in the days leading up to the event to drive advance ticket sales and sell out before the date.",
-                event_f1: "Intensive acceleration for advance ticket presales",
-                event_f2: "Massive injection of watch time and buying comments",
-                event_f3: "Amplification across tourism & nightlife channels",
-                event_f4: "Radical reduction in customer acquisition cost per ticket",
-                event_price_label: "Turnkey Investment per Event",
-                event_per: "USD",
-                event_btn: "Inquire Event Coverage",
-                event_subnote: "Limited slots per date to ensure exclusivity",
-                sim_badge: "Algorithmic ROI Calculator",
-                sim_title: "Project Your Venue's Monthly Growth",
-                sim_subtitle: "Adjust your monthly publishing frequency to estimate local reach, booking inquiries, and ad spend savings.",
-                sim_label: "Monthly Publishing Frequency:",
-                sim_step_1: "4 (1 per week)",
-                sim_step_2: "12 (3 per week)",
-                sim_step_3: "20 (5 per week)",
-                sim_step_4: "30 (Daily)",
-                sim_out1_title: "Estimated Local Reach",
-                sim_out1_sub: "People in your city",
-                sim_out2_title: "Injected Social Proof",
-                sim_out2_sub: "Real customer comments",
-                sim_out3_title: "Estimated Ad Savings",
-                sim_out3_sub: "Savings from lower CPA",
-                sim_cta: "Test AlgoBoost on My Videos (15-Min Session)",
-                final_badge: "Real-Time Demonstration",
-                final_title: "Watch Your Latest Post Break Out in 3 Minutes",
-                final_sub: "We arrange a 15-minute live session (via video call or directly on WhatsApp). We audit your profile, run a live test on your venue's latest post, and show you real-time results.",
-                cta_final: "Book 15-Min Live Session + Live Test",
-                cta_subnote: "No passwords. No installations. Limited slots per niche and city for exclusivity.",
-                footer_privacy: "Privacy",
-                footer_terms: "Terms"
+                nav_addons: "Add-ons",
+                nav_faq: "FAQ",
+                nav_cta: "Request Demo",
+                hero_badge: "Specialists in Hospitality, DMCs, Tours & Live Events",
+                hero_title: 'We turn every inquiry into <span class="font-editorial italic font-normal text-amber-300">confirmed bookings.</span>',
+                hero_desc: "Stop paying for ad clicks that never buy. We send every real booking closed in WhatsApp straight back to Meta Ads (CAPI + AlgoBoost) and automate 24/7 text & voice reception in Spanish, Portuguese, and English.",
+                hero_cta1: "Try Live Demo",
+                hero_cta2: "View Solutions",
+                stat_1: "Booking commission",
+                stat_2: "24/7 multilingual care",
+                stat_3: "Real conversion tracking",
+                card_tag: "Turismo MKT Architecture",
+                card_title: "From first click to confirmed booking",
+                flow_s1_t: "Targeted Traffic (Meta Ads / Google)",
+                flow_s1_d: "Travelers targeted by device language, geo-location, airports, or venues straight to WhatsApp.",
+                flow_s2_t: "24/7 AI Text & Real-Time Voice",
+                flow_s2_d: "Quotes dates, guests, or tickets in seconds and follows up automatically.",
+                flow_s3_t: "Confirm deposit → Meta CAPI Signal",
+                flow_s3_d: "With a ✅ reaction or keyword, Meta receives the exact value and optimizes for real buyers.",
+                why_1_t: "WhatsApp converts higher than cold websites",
+                why_1_d: "In travel and VIP events, guests ask about dates, transfers, kids, or payment options before paying. Instant answers multiply bookings.",
+                why_2_t: "Meta CAPI learns who actually pays",
+                why_2_d: "Without CAPI, Meta only sees clicks. With our bridge, every closed booking in WhatsApp trains the algorithm with real revenue.",
+                why_3_t: "Keep your current WhatsApp number",
+                why_3_d: "Link your existing WhatsApp Business in 1 minute via QR or 8-digit pairing code. Zero risky migrations.",
+                niche_eyebrow: "100% Specialized",
+                niche_title: "Built for travel & events, never generic templates",
+                niche_sub: "Pick your business type to see how we capture demand and convert in WhatsApp:",
+                tab_hotel: "🏨 Hotels & Lodges",
+                tab_receptivo: "🚐 DMCs & Agencies",
+                tab_excursion: "🏔️ Tours & Excursions",
+                tab_evento: "🎟️ Events & Concerts",
+                niche_sim_label: "Live WhatsApp flow example",
+                sim_client: "Guest (Meta Ads):",
+                sim_ai: "Turismo MKT (ES / PT / EN):",
+                eco_eyebrow: "Proven Method",
+                eco_title: "End-to-end growth: demand, omnichannel AI & real bookings",
+                step_1_t: "Smart Ads + AlgoBoost",
+                step_1_d: "Targeting by device language, in-destination travelers, airports, and real-buyer Lookalikes.",
+                step_2_t: "AI Text & Voice Reception",
+                step_2_d: "Answers WhatsApp messages and calls in real time in ES, PT, or EN before leads go cold.",
+                step_3_t: "Kanban, Booking & Follow-Up",
+                step_3_d: "Every inquiry is tracked by stage and followed up automatically until the deposit is paid.",
+                step_4_t: "Zero-Friction Meta CAPI",
+                step_4_d: "Once confirmed in WhatsApp, we fire the exact booking value to Meta Ads to lower your CPA.",
+                plans_eyebrow: "Our Solutions",
+                plans_title: "Choose the right setup for your operation",
+                plans_sub: "Turnkey implementation tailored to the volume of your hotel, agency, tour operator, or event.",
+                p1_badge: "STARTER · ADS + TRACKING",
+                p1_title: "Starter Plan: Meta CAPI + Campaigns",
+                p1_desc: "Ideal if your team already replies on WhatsApp and you want Meta Ads to optimize for real paid bookings.",
+                p1_f1: "Direct WhatsApp bridge to Meta CAPI (keep your current number).",
+                p1_f2: "Automatic real-value conversion tracking (✅ reaction or keyword).",
+                p1_f3: "1-click self-reconnect portal (QR or 8-character pairing code).",
+                p1_f4: "Full Meta Ads campaign management + AlgoBoost included.",
+                p1_cta: "Request Starter Plan Audit →",
+                p2_popular: "Most Popular",
+                p2_badge: "TURNKEY · FULL ECOSYSTEM",
+                p2_title: "Turismo MKT 360° Ecosystem",
+                p2_desc: "For hotels, DMCs, tour operators, and event producers wanting zero missed leads and 24/7 automation.",
+                p2_f1: "Everything in Starter Plan (Meta CAPI + Ad Management + AlgoBoost).",
+                p2_f2: "24/7 Multilingual AI Receptionist on WhatsApp (ES, PT & EN).",
+                p2_f3: "Real-Time AI Voice Receptionist for incoming WhatsApp calls.",
+                p2_f4: "Booking Kanban CRM + Automated Calendar + Quote Follow-Up.",
+                p2_f5: "Team training & 24/7 priority support.",
+                p2_cta: "Try 360° Demo & Get Quote →",
+                mod_eyebrow: "Optional Modules",
+                mod_title: "Scale your stack whenever your destination demands it",
+                m1_t: "High-Intent Google Ads",
+                m1_d: "Capture travelers actively searching to book hotels, tours, or tickets today and route them straight to WhatsApp.",
+                m2_t: "Google Maps Review Engine",
+                m2_d: "Post-stay WhatsApp feedback: happy guests go straight to Google Maps; issues alert the manager privately.",
+                m3_t: "Creatives & Virality",
+                m3_d: "Reels and ad creatives modeled on proven viral travel formats to cut ad costs from day one.",
+                m4_t: "Contact Center & SIP Telephony",
+                m4_d: "Multi-agent desk combining WhatsApp + IP landlines (PBX/SIP) and call recording for larger teams.",
+                faq_title: "Frequently Asked Questions",
+                faq_q1: "Which channels does Turismo MKT centralize and how does 24/7 AI work?",
+                faq_a1: "We unify WhatsApp, Instagram, Messenger, web leads, and calls in one omnichannel desk. Our AI replies instantly in English, Spanish, and Portuguese, updates your Kanban CRM, and books appointments automatically.",
+                faq_q2: "How does the Real-Time AI Voice Receptionist work?",
+                faq_a2: "It answers incoming calls in real time with natural voice, handles availability and rate questions, books slots, and attaches the call recording and summary inside the chat. It also connects to SIP/PBX phone systems.",
+                faq_q3: "How do you make Meta Ads and Google Ads bring real buyers instead of window shoppers?",
+                faq_a3: "We combine travel-specific targeting (device language, airports, in-destination travelers) + AlgoBoost + Meta CAPI firing exact confirmed booking revenue back to the algorithm.",
+                faq_q4: "Do I have to change my current phone numbers or lose chat history?",
+                faq_a4: "No. We link your existing WhatsApp Business number via QR or 8-letter code and connect your ad accounts in minutes without losing chats or contacts.",
+                faq_q5: "How is it deployed and why aren't fixed prices listed?",
+                faq_a5: "We deliver a turnkey ecosystem tailored to your inquiry volume, team seats, languages, and optional modules during a 15-minute live demo.",
+                
+                cta_title: "Test the Turismo MKT desk live before deciding",
+                cta_sub: "Message us on WhatsApp, test the flow like a real traveler, and get a clear roadmap for your next season or event.",
+                cta_btn: "Chat on WhatsApp",
+                footer_desc: "WhatsApp Conversion Specialists for Travel & Events",
+                footer_priv: "Privacy",
+                footer_terms: "Terms",
+                float_wa: "WhatsApp Demo"
             }
         };
 
-        function setLanguage(lang) {
+        const nichesData = {
+            es: {
+                hotel: {
+                    badge: "Hoteles, Cabañas & Lodges",
+                    heading: "Llená habitaciones directas sin pagar comisiones a OTAs",
+                    body: "Captamos viajeros buscando alojamiento en tu destino por idioma y temporada, respondemos al instante en Español, Portugués o Inglés y recuperamos cada cotización que no dejó seña.",
+                    bullets: [
+                        "✓ Menos dependencia de Booking/Despegar en temporada media y baja.",
+                        "✓ Seguimiento automático a las 2h y 24h si el huésped no transfirió.",
+                        "✓ Meta CAPI recibe el valor exacto de la estadía confirmada."
+                    ],
+                    cta: "Quiero ver cómo aplica a mi hotel",
+                    chatIn: "Hola! Tienen disponibilidad para 2 adultos y 1 niño del 15 al 19 de enero?",
+                    chatOut: "¡Hola! Sí, tenemos Suite Familiar disponible para esas 4 noches con desayuno incluido ($360 USD). ¿Querés que te pase los datos de seña o preferís agendar una llamada?",
+                    capi: "✅ Meta CAPI: Purchase enviado",
+                    val: "USD 360"
+                },
+                receptivo: {
+                    badge: "Receptivos & Agencias de Viajes",
+                    heading: "Cotizá paquetes completos 24/7 y no pierdas pasajeros de otros husos horarios",
+                    body: "Cuando un turista europeo o brasileño escribe de noche, tu central ya lo califica, arma su ficha en el Kanban y agenda la llamada de cierre con tu vendedor.",
+                    bullets: [
+                        "✓ Atención simultánea en ES / PT / EN por texto y llamada de WhatsApp.",
+                        "✓ Clasificación automática por destino, fechas y cantidad de pasajeros.",
+                        "✓ Grabación de llamadas y auditoría comercial en un solo panel."
+                    ],
+                    cta: "Quiero ver cómo aplica a mi agencia",
+                    chatIn: "Oi! Vocês fazem pacote completo aeroporto + hotel + passeios para 4 pessoas?",
+                    chatOut: "Olá! Sim, montamos seu pacote completo em português com transfer privado e passeios. Para qual data vocês chegam?",
+                    capi: "✅ Meta CAPI: Purchase enviado",
+                    val: "BRL 4.800"
+                },
+                excursion: {
+                    badge: "Excursiones, Traslados & Tours",
+                    heading: "Captá turistas que ya están en tu ciudad buscando qué hacer hoy",
+                    body: "Segmentamos anuncios hyper-locales alrededor de hoteles y aeropuertos. El turista escribe, elige turno en la agenda y confirma su lugar por WhatsApp en minutos.",
+                    bullets: [
+                        "✓ Segmentación por turistas 'recientemente en el destino' + idioma.",
+                        "✓ Envío enriquecido de fichas con fotos, itinerario y precio.",
+                        "✓ Encuesta post-excursión automática para sumar reseñas en Google Maps."
+                    ],
+                    cta: "Quiero ver cómo aplica a mis excursiones",
+                    chatIn: "Hi! Do you have spots for tomorrow morning's full-day tour with hotel pickup?",
+                    chatOut: "Hi! Yes, we have 2 spots left for tomorrow at 08:00 AM with pickup included ($95 USD p/p). Shall I lock them in for you?",
+                    capi: "✅ Meta CAPI: Purchase enviado",
+                    val: "USD 190"
+                },
+                evento: {
+                    badge: "Productoras de Eventos, Festivales & Recitales",
+                    heading: "Atendé picos de miles de mensajes sin colapsar y vendé más mesas VIP y entradas",
+                    body: "Cuando lanzás preventa o show, el WhatsApp explota. Nuestra IA responde sectores, precios y medios de pago al segundo y envía cada venta real a Meta CAPI.",
+                    bullets: [
+                        "✓ Cero demoras en preventas masivas, mesas VIP, palcos y traslados.",
+                        "✓ Recupero automático de quienes consultaron sector y no pagaron.",
+                        "✓ Baja drásticamente el costo por entrada vendida en Meta Ads."
+                    ],
+                    cta: "Quiero ver cómo aplica a mis eventos",
+                    chatIn: "Hola! Precio de mesa VIP para el recital del sábado y qué incluye?",
+                    chatOut: "¡Hola! La Mesa VIP Sector Norte incluye 6 precintos + consumo bonificado ($420.000 ARS). ¿Te reservo una ahora antes de que cierre el lote?",
+                    capi: "✅ Meta CAPI: Purchase enviado",
+                    val: "ARS 420.000"
+                }
+            },
+            pt: {
+                hotel: {
+                    badge: "Hotéis, Pousadas & Resorts",
+                    heading: "Lotação direta sem pagar comissões altas para OTAs",
+                    body: "Atraímos viajantes buscando hospedagem no seu destino, respondemos na hora em Português, Espanhol ou Inglês e recuperamos quem pediu orçamento.",
+                    bullets: [
+                        "✓ Menos dependência de Booking/Decolar.",
+                        "✓ Follow-up automático se o hóspede não pagou o sinal.",
+                        "✓ Meta CAPI recebe o valor exato da reserva fechada."
+                    ],
+                    cta: "Quero aplicar no meu hotel",
+                    chatIn: "Olá! Tem disponibilidade para 2 adultos de 15 a 19 de janeiro?",
+                    chatOut: "Olá! Sim, temos Suíte disponível para essas 4 diárias com café da manhã (R$ 2.100). Quer os dados para garantir com o sinal?",
+                    capi: "✅ Meta CAPI: Purchase enviado",
+                    val: "BRL 2.100"
+                },
+                receptivo: {
+                    badge: "Receptivos & Agências",
+                    heading: "Atenda turistas de qualquer fuso horário 24/7 sem perder vendas",
+                    body: "Sua central qualifica passageiros por texto e voz em 3 idiomas, organiza no Kanban e passa pronto para sua equipe fechar.",
+                    bullets: [
+                        "✓ Atendimento simultâneo em PT / ES / EN.",
+                        "✓ Qualificação por datas, destino e número de passageiros.",
+                        "✓ Gravação de chamadas e CRM integrado."
+                    ],
+                    cta: "Quero aplicar na minha agência",
+                    chatIn: "Hola! Hacen paquete completo aeropuerto + hotel + paseos?",
+                    chatOut: "¡Hola! Sí, armamos tu paquete completo con traslado privado y excursiones. ¿Para qué fecha llegan?",
+                    capi: "✅ Meta CAPI: Purchase enviado",
+                    val: "USD 890"
+                },
+                excursion: {
+                    badge: "Passeios, Transfers & Tours",
+                    heading: "Capture turistas que já estão na cidade procurando o que fazer hoje",
+                    body: "Anúncios geolocalizados perto de hotéis e aeroportos direto para o WhatsApp com reserva rápida.",
+                    bullets: [
+                        "✓ Segmentação para viajantes no destino + idioma.",
+                        "✓ Envio rápido de roteiro, fotos e preço.",
+                        "✓ Pesquisa pós-passeio para gerar avaliações no Google Maps."
+                    ],
+                    cta: "Quero aplicar nos meus passeios",
+                    chatIn: "Hi! Do you have spots for tomorrow's boat tour?",
+                    chatOut: "Hi! Yes, 2 spots left for 09:00 AM with hotel pickup. Shall I reserve them?",
+                    capi: "✅ Meta CAPI: Purchase enviado",
+                    val: "USD 160"
+                },
+                evento: {
+                    badge: "Eventos, Festivais & Shows",
+                    heading: "Atenda picos de mensagens sem travar e venda mais camarotes e ingressos",
+                    body: "Nossa IA responde setores, valores e pagamentos na hora e envia cada venda real ao Meta CAPI.",
+                    bullets: [
+                        "✓ Zero fila de espera em pré-vendas e camarotes VIP.",
+                        "✓ Recuperação automática de interessados.",
+                        "✓ Redução real do custo por ingresso no Meta Ads."
+                    ],
+                    cta: "Quero aplicar nos meus eventos",
+                    chatIn: "Qual o valor do camarote VIP para sábado?",
+                    chatOut: "O Camarote VIP inclui 6 pulseiras + consumação. Quer garantir o seu lote agora?",
+                    capi: "✅ Meta CAPI: Purchase enviado",
+                    val: "BRL 2.400"
+                }
+            },
+            en: {
+                hotel: {
+                    badge: "Hotels, Cabins & Lodges",
+                    heading: "Drive direct room bookings without heavy OTA commissions",
+                    body: "We target travelers searching your destination by language and season, reply instantly in ES/PT/EN, and follow up on unpaid quotes.",
+                    bullets: [
+                        "✓ Less reliance on OTAs during shoulder & low seasons.",
+                        "✓ Automated 2h & 24h follow-up until deposit is paid.",
+                        "✓ Meta CAPI receives exact confirmed booking revenue."
+                    ],
+                    cta: "Apply this to my hotel",
+                    chatIn: "Hi! Do you have a family suite available Jan 15–19?",
+                    chatOut: "Hi! Yes, our Family Suite is available for 4 nights with breakfast included ($360 USD). Would you like the deposit link?",
+                    capi: "✅ Meta CAPI: Purchase sent",
+                    val: "USD 360"
+                },
+                receptivo: {
+                    badge: "DMCs & Travel Agencies",
+                    heading: "Quote full packages 24/7 across every time zone",
+                    body: "Your AI desk qualifies travelers via WhatsApp text & voice in 3 languages and organizes leads in your Kanban CRM.",
+                    bullets: [
+                        "✓ Simultaneous ES / PT / EN text and voice reception.",
+                        "✓ Automatic tagging by travel dates and group size.",
+                        "✓ Call recording and full sales pipeline visibility."
+                    ],
+                    cta: "Apply this to my agency",
+                    chatIn: "Oi! Vocês fazem pacote aeroporto + hotel + passeios?",
+                    chatOut: "Olá! Sim, montamos seu pacote completo em português. Qual a data da viagem?",
+                    capi: "✅ Meta CAPI: Purchase sent",
+                    val: "USD 890"
+                },
+                excursion: {
+                    badge: "Tours, Transfers & Excursions",
+                    heading: "Capture travelers already in town looking for activities today",
+                    body: "Hyper-local ads around hotels and airports route tourists directly to WhatsApp to lock in seats in minutes.",
+                    bullets: [
+                        "✓ Targeting travelers currently in destination + language.",
+                        "✓ Instant itinerary, photo, and rate sharing.",
+                        "✓ Post-tour WhatsApp review flow for Google Maps."
+                    ],
+                    cta: "Apply this to my tours",
+                    chatIn: "Hi! Any spots left for tomorrow's full-day excursion?",
+                    chatOut: "Hi! Yes, 2 seats left at 8:00 AM with hotel pickup ($95 USD p/p). Shall I confirm them?",
+                    capi: "✅ Meta CAPI: Purchase sent",
+                    val: "USD 190"
+                },
+                evento: {
+                    badge: "Events, Festivals & Concerts",
+                    heading: "Handle massive presale spikes and sell more VIP tables & passes",
+                    body: "Instant answers on tiers, VIP tables, and payments with real purchase revenue sent straight back to Meta CAPI.",
+                    bullets: [
+                        "✓ Zero wait times during high-demand ticket drops.",
+                        "✓ Automatic recovery of abandoned VIP inquiries.",
+                        "✓ Lower cost per ticket sold on Meta Ads."
+                    ],
+                    cta: "Apply this to my events",
+                    chatIn: "How much is a VIP table for Saturday's concert?",
+                    chatOut: "VIP Tables include 6 passes + bottle credit ($450 USD). Want me to hold one before this tier closes?",
+                    capi: "✅ Meta CAPI: Purchase sent",
+                    val: "USD 450"
+                }
+            }
+        };
+
+        let currentLang = "es";
+        let currentNiche = "hotel";
+
+        function setLang(lang) {
             currentLang = lang;
-            try {
-                localStorage.setItem('tmkt_lang_turismo', lang);
-            } catch(e) {}
-
             document.documentElement.lang = lang;
-
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            const activeBtn = document.getElementById('btn-' + lang);
-            if (activeBtn) activeBtn.classList.add('active');
-
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key] !== undefined) {
-                    el.innerHTML = translations[lang][key];
+            ["es", "pt", "en"].forEach(l => {
+                const b = document.getElementById("btn-" + l);
+                b.className = l === lang
+                    ? "px-2.5 py-1 rounded-md transition-colors lang-active"
+                    : "px-2.5 py-1 rounded-md transition-colors text-inkSoft hover:text-ink";
+            });
+            document.querySelectorAll("[data-i18n]").forEach(el => {
+                const key = el.getAttribute("data-i18n");
+                if (i18n[lang] && i18n[lang][key]) {
+                    el.innerHTML = i18n[lang][key];
                 }
             });
-
-            // Update simulator text dynamically
-            const slider = document.getElementById('capacity-slider');
-            if (slider) updateSimulator(slider.value);
+            selectNiche(currentNiche);
         }
 
-        // Initialize on page load
-        window.addEventListener('DOMContentLoaded', () => {
-            let savedLang = 'es';
-            try {
-                savedLang = localStorage.getItem('tmkt_lang_turismo') || 'es';
-            } catch(e) {}
-            setLanguage(savedLang);
-        });
+        function selectNiche(niche) {
+            currentNiche = niche;
+            ["hotel", "receptivo", "excursion", "evento"].forEach(n => {
+                const btn = document.getElementById("tab-" + n);
+                btn.className = n === niche
+                    ? "px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all tab-active"
+                    : "px-4 py-2.5 rounded-xl border border-ink/15 bg-white text-ink text-sm font-semibold transition-all hover:border-ink/40";
+            });
+            const data = nichesData[currentLang][niche];
+            document.getElementById("niche-badge").textContent = data.badge;
+            document.getElementById("niche-heading").textContent = data.heading;
+            document.getElementById("niche-body").textContent = data.body;
+            document.getElementById("niche-bullets").innerHTML = data.bullets.map(b => `<li>${b}</li>`).join("");
+            document.getElementById("niche-cta-text").textContent = data.cta;
+            document.getElementById("niche-cta").href = "https://wa.me/5491158432412?text=" + encodeURIComponent("Hola Turismo MKT, " + data.cta);
+            document.getElementById("niche-chat-in").textContent = data.chatIn;
+            document.getElementById("niche-chat-out").textContent = data.chatOut;
+            document.getElementById("niche-capi-event").textContent = data.capi;
+            document.getElementById("niche-capi-val").textContent = data.val;
+        }
+
+        function toggleFaq(idx) {
+            const el = document.getElementById("faq-a-" + idx);
+            el.classList.toggle("hidden");
+        }
+
+        selectNiche("hotel");
     </script>
 </body>
+
 </html>
