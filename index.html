@@ -508,13 +508,27 @@
         </div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE -->
-    <a href="https://wa.me/5491158432412?text=Hola%20Turismo%20MKT%2C%20tengo%20una%20agencia%20de%20viajes%20y%20quiero%20info."
-        target="_blank" rel="noopener" aria-label="WhatsApp Turismo MKT"
-        class="fixed bottom-5 right-5 z-50 bg-emerald-500 hover:bg-emerald-400 text-ink font-bold px-4 py-3 rounded-full shadow-xl flex items-center gap-2 text-sm transition-transform hover:scale-105">
-        <span>💬</span>
-        <span class="hidden sm:inline" data-i18n="float_wa">Consultoría</span>
-    </a>
+    <!-- WIDGET ASTRACHAT EN VIVO -->
+    <script>
+      window.chatwootSettings = {
+        position: 'right',
+        type: 'standard',
+        launcherTitle: 'Consultoría'
+      };
+      (function(d,t) {
+        var BASE_URL="https://app.turismomkt.com";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=BASE_URL+"/packs/js/sdk.js";
+        g.async = true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
+          window.chatwootSDK.run({
+            websiteToken: 'iboimZbGb9pQwVsHbWNeT7U2',
+            baseUrl: BASE_URL
+          })
+        }
+      })(document,"script");
+    </script>
 
     <script>
         const i18n = {
